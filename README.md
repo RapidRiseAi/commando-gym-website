@@ -42,6 +42,7 @@ npm run start    # run built app
 - Works on Vercel or any Node runtime supporting Next.js App Router.
 - Configure env vars in deployment platform.
 - Replace `[OWNER_CONFIRMATION_REQUIRED]` placeholders in `src/content/site-content.ts` before launch.
+- For Cloudflare/OpenNext builds, keep `autoprefixer` + `postcss` installed in `devDependencies` because `src/app/globals.css` is compiled through PostCSS during `next build`.
 
 ## Notes
 - Factual business details are intentionally placeholdered unless verified.
