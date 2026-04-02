@@ -106,34 +106,3 @@ export const faqGroups = [
     ]
   }
 ];
-
-export const wellnessStudio = {
-  hours: "[OWNER_CONFIRMATION_REQUIRED] Needs owner confirmation",
-  bookingMode: "Advance booking required via reception/WhatsApp.",
-  memberDiscountRule: "Active Commando Gym members receive 10% off all wellness treatments.",
-  categories: {
-    massageAndBody: [
-      { name: "Back, Neck & Shoulder Massage", duration: "30 min", price: "R250" },
-      { name: "Full Body Massage", duration: "60 min", price: "R450" },
-      { name: "Hot Stone Massage", duration: "75 min", price: "R550", notes: "Includes heat therapy stones." },
-      { name: "Body Scrub & Glow", duration: "45 min", price: "R380" }
-    ],
-    handAndFoot: [
-      { name: "Express Manicure", duration: "30 min", price: "R180" },
-      { name: "Classic Manicure", duration: "45 min", price: "R240" },
-      { name: "Express Pedicure", duration: "35 min", price: "R220" },
-      { name: "Classic Pedicure", duration: "60 min", price: "R320" }
-    ],
-    facial: [
-      { name: "Express Facial", duration: "30 min", price: "R260" },
-      { name: "Deep Cleanse Facial", duration: "60 min", price: "R420" },
-      { name: "Anti-Aging Facial", duration: "75 min", price: "R520", notes: "Targets fine lines and dull skin." }
-    ],
-    waxing: [
-      { name: "Lip Wax", duration: "15 min", price: "R90" },
-      { name: "Underarm Wax", duration: "20 min", price: "R130" },
-      { name: "Half Leg Wax", duration: "30 min", price: "R220" },
-      { name: "Full Leg Wax", duration: "45 min", price: "R340" }
-    ]
-  }
-};
