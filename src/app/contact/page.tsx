@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <Section title="Contact Commando" subtitle="Reach us directly on WhatsApp for memberships and wellness bookings.">
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="space-y-3 rounded-2xl border border-border bg-surface p-5 text-zinc-300">
+        <div className="mobile-card space-y-3 text-zinc-300 md:p-5">
           <p><strong>Address:</strong> {businessFacts.address}</p>
           <p><strong>Phone:</strong> {businessFacts.phone}</p>
           <p><strong>WhatsApp:</strong> {businessFacts.whatsapp}</p>
@@ -19,13 +19,17 @@ export default function ContactPage() {
           <p><strong>Gym hours:</strong> {businessFacts.hours}</p>
           <p><strong>Wellness Studio:</strong> 08:00–16:00, appointment only.</p>
         </div>
-        <div className="rounded-2xl border border-border bg-surface p-5">
+        <div className="mobile-card md:p-5">
           <p className="mb-3 text-zinc-300">Map link:</p>
           <a className="underline" href={businessFacts.mapLink} target="_blank" rel="noreferrer">Open map</a>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-5 hidden flex-wrap gap-3 md:flex">
             <Button href="/join">Join now</Button>
             <Button href={telLink} variant="secondary">Call now</Button>
             <Button href={waLink} variant="secondary">WhatsApp now</Button>
+          </div>
+          <div className="mt-5 space-y-2 text-sm md:hidden">
+            <a href={waLink} className="inline-flex items-center underline">WhatsApp us directly</a>
+            <a href={telLink} className="inline-flex items-center underline">Call the team</a>
           </div>
           <p className="mt-4 text-sm text-zinc-300">
             If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.

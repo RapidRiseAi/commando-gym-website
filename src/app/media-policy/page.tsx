@@ -6,15 +6,16 @@ export const metadata = buildMetadata("Media Policy", "Photo and video policy fo
 export default function MediaPolicyPage() {
   return (
     <Section title="Media Policy" subtitle="Photo and video use in the gym and wellness environment.">
-      <div className="space-y-4 rounded-2xl border border-border bg-surface p-6 text-zinc-300">
+      <div className="mobile-card space-y-4 text-zinc-300">
         <p>
           By entering and using Commando facilities, members and visitors acknowledge that photos and videos may be
           captured by Commando for promotional and community purposes.
         </p>
-        <p>
-          Members may capture their own photos or videos, provided they do not interfere with safety, training flow,
-          or the privacy and comfort of others.
-        </p>
+        <ul className="list-disc space-y-1 pl-5 text-sm md:text-base">
+          <li>Personal media is allowed if it does not disrupt safety or training flow.</li>
+          <li>Please respect other members’ comfort and privacy at all times.</li>
+          <li>Ask staff if you are unsure whether filming is appropriate in a space.</li>
+        </ul>
       </div>
     </Section>
   );

@@ -41,7 +41,7 @@ export default function MembershipsPage() {
           </article>
         ))}
       </div>
-      <div className="mobile-card mt-6 text-sm text-zinc-300 md:text-base">
+      <div className="mobile-card mt-6 text-sm text-zinc-300 md:p-4 md:text-base">
         No sign-up fee and no fixed contract on standard options. Need help choosing? Message us on WhatsApp via the Contact page.
       </div>
       <div className="mobile-card mt-6 md:hidden">

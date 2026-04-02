@@ -79,7 +79,7 @@ export default function HomePage() {
       </Section>
 
       <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to facials and waxing, wellness services are available by appointment.">
-        <div className="mobile-card">
+        <div className="mobile-card md:p-6">
           <p className="mobile-copy">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3">
             <Button href="/spa">View Wellness Pricing</Button>
@@ -91,7 +91,7 @@ export default function HomePage() {
       <Section title="Real member momentum" subtitle="Built around consistency, support, and local community progress.">
         <div className="grid gap-4 md:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.quote} className="mobile-card">
+            <article key={item.quote} className="mobile-card md:p-5">
               <p className="text-zinc-200">“{item.quote}”</p>
               <p className="mt-4 text-sm font-semibold">{item.name}</p>
               <p className="text-xs text-zinc-400">{item.context}</p>

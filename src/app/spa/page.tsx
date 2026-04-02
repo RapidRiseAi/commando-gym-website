@@ -14,7 +14,7 @@ export default function SpaPage() {
         <Image src={mediaAssets.wellness.src} alt={mediaAssets.wellness.alt} width={1400} height={700} className="h-56 w-full object-cover md:h-72" />
       </div>
 
-      <div className="mobile-card text-sm text-zinc-200 md:text-base">
+      <div className="mobile-card text-sm text-zinc-200 md:p-4 md:text-base">
         <p><strong>Hours:</strong> {wellnessStudio.hours}</p>
         <p><strong>Booking:</strong> {wellnessStudio.bookingLine}</p>
         <p><strong>Member benefit:</strong> {wellnessStudio.memberBenefit}</p>
@@ -34,7 +34,7 @@ export default function SpaPage() {
 
       <div className="mt-6 space-y-5">
         {wellnessStudio.categories.map((category) => (
-          <article id={category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} key={category.name} className="mobile-card scroll-mt-24">
+          <article id={category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} key={category.name} className="mobile-card scroll-mt-24 md:p-5">
             <h3 className="text-lg font-bold md:text-xl">{category.name}</h3>
             <div className="mt-3 space-y-2.5">
               {category.items.map((item) => (
