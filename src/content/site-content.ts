@@ -26,9 +26,9 @@ export const businessFacts = {
 
 export const homeContent = {
   hero: {
-    headline: "24/7 Gym Training + Onsite Wellness & Beauty Studio",
+    headline: "Train Anytime. Recover Properly. Stay Consistent.",
     subheadline:
-      "Commando combines serious gym training with appointment-based wellness and beauty treatments in one location. Build strength, recover properly, and keep your routine consistent all year.",
+      "Commando is Sabie’s 24/7 training space with an Onsite Wellness Studio. Whether you are just starting or already active, we give you the structure and environment to keep moving forward.",
     primaryCta: { label: "Join Now", href: "/join" },
     secondaryCta: { label: "View Memberships", href: "/memberships" }
   },

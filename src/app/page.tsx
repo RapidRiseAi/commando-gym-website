@@ -28,13 +28,11 @@ export default function HomePage() {
       <section className="border-b border-border bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_45%)]">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-zinc-400">24/7 Gym + Wellness & Beauty Studio in Sabie</p>
+            <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
+              24/7 Gym + Wellness & Beauty Studio in Sabie
+            </p>
             <h1 className="text-4xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
             <p className="mt-4 max-w-xl text-zinc-300">{homeContent.hero.subheadline}</p>
-            <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3 text-sm text-zinc-200">
-              <p className="font-semibold">Wellness & beauty services on-site:</p>
-              <p className="mt-1 text-zinc-300">Sports massage • Swedish massage • Facial care • Waxing • Hand & foot care</p>
-            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</Button>
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
@@ -51,13 +49,16 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="absolute inset-x-4 bottom-4 grid gap-3 rounded-2xl border border-white/20 bg-black/60 p-4 backdrop-blur">
+            <div className="absolute inset-x-4 bottom-4 grid gap-3 rounded-2xl border border-white/20 bg-black/75 p-4 backdrop-blur">
               {businessFacts.socialProof.map((item) => (
                 <div key={item.label}>
                   <p className="text-2xl font-bold">{item.value}</p>
                   <p className="text-sm text-zinc-300">{item.label}</p>
                 </div>
               ))}
+              <div className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-zinc-200">
+                Wellness & beauty services: Sports massage • Swedish massage • Facial care • Waxing
+              </div>
             </div>
           </div>
         </div>
