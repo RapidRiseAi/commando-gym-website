@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/section";
 import { ruleGroups } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata("Gym Rules", "Community and safety rules for Commando Gym Sabie.", "/rules");
+export const metadata = buildMetadata("Gym Rules", "Community, safety, minors, and media rules for Commando.", "/rules");
 
 export default function RulesPage() {
   return (

@@ -62,7 +62,7 @@ export function JoinForm() {
 
   return (
     <form onSubmit={submit} className="space-y-4 rounded-2xl border border-border bg-surface p-5 shadow-glow md:p-8">
-      <p className="text-sm text-zinc-300">No pressure. No judgment. Just a strong first step.</p>
+      <p className="text-sm text-zinc-300">You can complete this in under two minutes. We’ll contact you on your preferred method.</p>
       <div className="grid gap-4 md:grid-cols-2">
         <label className="text-sm">Full name<input className={fieldClass} value={data.full_name} onChange={(e) => setField("full_name", e.target.value)} /></label>
         <label className="text-sm">Email<input className={fieldClass} type="email" value={data.email} onChange={(e) => setField("email", e.target.value)} /></label>
@@ -79,7 +79,7 @@ export function JoinForm() {
           </select>
         </label>
         <label className="text-sm">Preferred plan<input className={fieldClass} value={data.preferred_plan} onChange={(e) => setField("preferred_plan", e.target.value)} /></label>
-        <label className="text-sm">Interested in spa
+        <label className="text-sm">Interested in Wellness Studio
           <select className={fieldClass} value={data.interested_in_spa} onChange={(e) => setField("interested_in_spa", e.target.value)}>
             <option value="yes">Yes</option><option value="no">No</option>
           </select>
@@ -101,19 +101,17 @@ export function JoinForm() {
 
       <label className="flex items-start gap-2 text-sm">
         <input className="mt-1" type="checkbox" checked={data.consent_checkbox} onChange={(e) => setField("consent_checkbox", e.target.checked)} />
-        <span>I consent to be contacted regarding membership options.</span>
+        <span>I consent to be contacted regarding membership options, and I accept Commando’s terms, waiver, and media policy.</span>
       </label>
-
-      <p className="rounded border border-dashed border-border p-2 text-xs text-zinc-400">Turnstile / spam protection integration: [OWNER_CONFIRMATION_REQUIRED].</p>
 
       <Button type="submit" className="w-full">{status === "loading" ? "Submitting..." : "Join Now"}</Button>
       {status === "success" && (
         <div className="rounded-lg border border-emerald-700/40 bg-emerald-950/40 p-3 text-sm text-emerald-300">
-          Submitted! Our team will contact you within [OWNER_CONFIRMATION_REQUIRED].
+          Thanks — your request has been received. Our team will contact you within 24 hours. If urgent, message WhatsApp +27 60 971 0050.
           <div className="mt-2 flex gap-3"><Link href="/faq" className="underline">View FAQ</Link><Link href="/memberships" className="underline">Explore Memberships</Link></div>
         </div>
       )}
-      {status === "error" && <p className="text-sm text-red-300">Couldn’t submit. Please retry or contact the gym directly.</p>}
+      {status === "error" && <p className="text-sm text-red-300">Couldn’t submit. Please contact Chantelle on WhatsApp +27 60 971 0050 and we’ll assist as soon as possible.</p>}
     </form>
   );
 }
