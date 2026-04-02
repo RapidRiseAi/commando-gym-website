@@ -1,13 +1,8 @@
-import { JoinForm } from "@/components/forms/join-form";
-import { Section } from "@/components/ui/section";
+import { redirect } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata("Join Now", "Join Commando Gym Sabie with a guided onboarding process.", "/join");
+export const metadata = buildMetadata("Join Now", "Join Commando with 24/7 access and a supportive start.", "/join");
 
 export default function JoinPage() {
-  return (
-    <Section title="Join Commando Gym" subtitle="Take your first step. We’ll guide the rest.">
-      <JoinForm />
-    </Section>
-  );
+  redirect("/memberships");
 }
