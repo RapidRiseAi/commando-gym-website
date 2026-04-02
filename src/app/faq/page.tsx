@@ -3,7 +3,7 @@ import { FaqSearch } from "@/components/sections/faq-search";
 import { faqGroups } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata("FAQ", "Frequently asked questions for Commando Gym Sabie.", "/faq");
+export const metadata = buildMetadata("FAQ", "Frequently asked questions for Commando gym access and Wellness Studio services.", "/faq");
 
 export default function FaqPage() {
   const faqLd = {
