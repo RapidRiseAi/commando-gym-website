@@ -38,6 +38,59 @@ export const homeContent = {
   }
 };
 
+export const mediaAssets = {
+  hero: {
+    src: "https://images.unsplash.com/photo-1594737625785-c640c8c81f5f?auto=format&fit=crop&w=1800&q=80",
+    alt: "Athlete performing strength training in a premium gym setting"
+  },
+  highlights: [
+    {
+      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+      alt: "Coach guiding a member through a strength workout",
+      title: "Coaching-led consistency",
+      body: "Structured support that helps beginners and regular lifters build momentum."
+    },
+    {
+      src: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
+      alt: "Member doing functional training in a dark premium gym interior",
+      title: "24/7 training access",
+      body: "Train when your schedule allows, without compromising on environment or focus."
+    },
+    {
+      src: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Wellness treatment session in progress",
+      title: "Onsite recovery support",
+      body: "Massage, facial care, waxing, and wellness treatments in one location."
+    }
+  ],
+  memberships: {
+    src: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1400&q=80",
+    alt: "Athlete resting between intense sets with gym equipment in background"
+  },
+  wellness: {
+    src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80",
+    alt: "Relaxed wellness environment with calm spa-like atmosphere"
+  }
+};
+
+export const testimonials = [
+  {
+    quote: "Best decision I made this year. The 24/7 access changed my routine completely.",
+    name: "Local Member",
+    context: "Monthly Membership"
+  },
+  {
+    quote: "Friendly team, no intimidation, and the wellness treatments help me recover faster.",
+    name: "Wellness Client",
+    context: "Gym + Wellness"
+  },
+  {
+    quote: "Perfect for Sabie. Serious training space with a welcoming vibe.",
+    name: "Couples Plan Member",
+    context: "Community Review"
+  }
+];
+
 export const memberships = [
   {
     name: "Daily Pass",

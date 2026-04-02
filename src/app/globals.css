@@ -12,6 +12,10 @@ html {
 
 body {
   @apply bg-bg text-white antialiased;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(120, 119, 198, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.14), transparent 35%);
+  background-attachment: fixed;
 }
 
 @media (prefers-reduced-motion: reduce) {

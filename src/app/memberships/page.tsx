@@ -1,6 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { memberships } from "@/content/site-content";
+import Image from "next/image";
+import { mediaAssets, memberships } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata("Memberships & Pricing", "Daily, weekly, monthly, couples, and student gym pricing in Sabie.", "/memberships");
@@ -8,6 +9,10 @@ export const metadata = buildMetadata("Memberships & Pricing", "Daily, weekly, m
 export default function MembershipsPage() {
   return (
     <Section title="Memberships & Access Options" subtitle="Choose the option that fits your routine. Standard pricing is listed in South African Rand (R).">
+      <div className="mb-6 overflow-hidden rounded-2xl border border-border">
+        <Image src={mediaAssets.memberships.src} alt={mediaAssets.memberships.alt} width={1400} height={600} className="h-52 w-full object-cover md:h-64" />
+      </div>
+
       <div className="md:hidden">
         <div className="flex snap-x gap-4 overflow-x-auto pb-4">
           {memberships.map((plan) => (
@@ -34,6 +39,24 @@ export default function MembershipsPage() {
       </div>
       <div className="mt-6 rounded-xl border border-border bg-surface p-4 text-sm text-zinc-300">
         No sign-up fee and no fixed contract on standard options. Need help choosing? Message us on WhatsApp via the Contact page.
+      </div>
+      <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-surface p-4">
+        <table className="w-full min-w-[640px] text-left text-sm">
+          <thead>
+            <tr className="text-zinc-400">
+              <th className="pb-2">Plan</th>
+              <th className="pb-2">Price</th>
+              <th className="pb-2">Best For</th>
+            </tr>
+          </thead>
+          <tbody className="text-zinc-200">
+            <tr className="border-t border-border"><td className="py-2">Daily Pass</td><td>R50</td><td>Visitors / flexible access</td></tr>
+            <tr className="border-t border-border"><td className="py-2">Weekly Pass</td><td>R150</td><td>Short stays / trial week</td></tr>
+            <tr className="border-t border-border"><td className="py-2">Monthly Membership</td><td>R350</td><td>Most consistent option</td></tr>
+            <tr className="border-t border-border"><td className="py-2">Couples Membership</td><td>R550</td><td>Training with a partner</td></tr>
+            <tr className="border-t border-border"><td className="py-2">Student Membership</td><td>R250</td><td>Budget-friendly routine building</td></tr>
+          </tbody>
+        </table>
       </div>
     </Section>
   );

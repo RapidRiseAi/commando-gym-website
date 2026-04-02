@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { buildMetadata } from "@/lib/seo";
-import { businessFacts, faqGroups, homeContent } from "@/content/site-content";
+import { businessFacts, faqGroups, homeContent, mediaAssets, testimonials } from "@/content/site-content";
 
 export const metadata = buildMetadata(
   "24/7 Gym & Onsite Wellness Studio in Sabie",
@@ -35,21 +36,39 @@ export default function HomePage() {
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
             </div>
           </div>
-          <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
-            {businessFacts.socialProof.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-border bg-surface p-4 shadow-glow">
-                <p className="text-2xl font-bold">{item.value}</p>
-                <p className="text-sm text-zinc-400">{item.label}</p>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl border border-border shadow-glow">
+              <Image
+                src={mediaAssets.hero.src}
+                alt={mediaAssets.hero.alt}
+                width={1200}
+                height={900}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute inset-x-4 bottom-4 grid gap-3 rounded-2xl border border-white/20 bg-black/60 p-4 backdrop-blur">
+              {businessFacts.socialProof.map((item) => (
+                <div key={item.label}>
+                  <p className="text-2xl font-bold">{item.value}</p>
+                  <p className="text-sm text-zinc-300">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <Section title={homeContent.motivation.title} subtitle={homeContent.motivation.body}>
         <div className="grid gap-4 md:grid-cols-3">
-          {["Open 24/7 for your schedule", "Family-friendly and inspirational culture", "Wellness support in the same location"].map((item) => (
-            <article key={item} className="rounded-2xl border border-border bg-surface p-5">{item}</article>
+          {mediaAssets.highlights.map((item) => (
+            <article key={item.title} className="overflow-hidden rounded-2xl border border-border bg-surface">
+              <Image src={item.src} alt={item.alt} width={900} height={650} className="h-44 w-full object-cover" />
+              <div className="p-5">
+                <h3 className="text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm text-zinc-300">{item.body}</p>
+              </div>
+            </article>
           ))}
         </div>
       </Section>
@@ -58,6 +77,18 @@ export default function HomePage() {
         <div className="rounded-2xl border border-border bg-surface p-6">
           <p className="text-zinc-300">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3"><Button href="/spa">View Wellness Pricing</Button><Button href="/join" variant="secondary">Join Commando</Button></div>
+        </div>
+      </Section>
+
+      <Section title="Real member momentum" subtitle="Built around consistency, support, and local community progress.">
+        <div className="grid gap-4 md:grid-cols-3">
+          {testimonials.map((item) => (
+            <article key={item.quote} className="rounded-2xl border border-border bg-surface p-5">
+              <p className="text-zinc-200">“{item.quote}”</p>
+              <p className="mt-4 text-sm font-semibold">{item.name}</p>
+              <p className="text-xs text-zinc-400">{item.context}</p>
+            </article>
+          ))}
         </div>
       </Section>
 

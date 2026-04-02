@@ -46,4 +46,5 @@ npm run start    # run built app
 
 ## Notes
 - Business details and pricing in `src/content/site-content.ts` are configured for Commando in Sabie.
+- Motivational visuals are configured via remote image URLs in content/code so PRs do not require binary image files.
 - See `RESEARCH_NOTES.md` and `BUILD_SUMMARY.md` for implementation context.
