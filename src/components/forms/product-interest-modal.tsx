@@ -8,11 +8,12 @@ type Props = {
   optionType: "membership" | "wellness";
   selectedOption: string;
   triggerLabel: string;
+  triggerClassName?: string;
 };
 
 type Errors = Partial<Record<keyof ProductInterestData, string>>;
 
-export function ProductInterestModal({ optionType, selectedOption, triggerLabel }: Props) {
+export function ProductInterestModal({ optionType, selectedOption, triggerLabel, triggerClassName }: Props) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Errors>({});
@@ -62,7 +63,7 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel 
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} className="w-full">{triggerLabel}</Button>
+      <Button onClick={() => setOpen(true)} className={triggerClassName ?? "w-full"}>{triggerLabel}</Button>
 
       {open && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4">
@@ -70,7 +71,10 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel 
             <div className="mb-4 flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-xl font-bold">Request this option</h3>
-                <p className="text-sm text-zinc-300">{selectedOption} • {optionType === "membership" ? "Membership" : "Wellness Service"}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-400">Selected option</p>
+                <div className="mt-1 rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
+                  {selectedOption} • {optionType === "membership" ? "Membership" : "Wellness Service"}
+                </div>
               </div>
               <button type="button" onClick={() => setOpen(false)} className="text-zinc-400 hover:text-white">✕</button>
             </div>

@@ -40,14 +40,19 @@ export default function SpaPage() {
               {category.items.map((item) => (
                 <div key={`${item.service}-${item.duration}-${item.price}`} className="rounded-lg border border-border/70 p-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="font-semibold">{item.service}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="font-semibold">{item.service}</p>
+                      <ProductInterestModal
+                        optionType="wellness"
+                        selectedOption={`${category.name} - ${item.service}`}
+                        triggerLabel="Choose this option"
+                        triggerClassName="min-h-8 rounded-lg px-3 py-1 text-xs"
+                      />
+                    </div>
                     <p className="font-bold">{item.price}</p>
                   </div>
                   {item.duration && <p className="text-sm text-zinc-300">{item.duration}</p>}
                   {item.note && <p className="text-xs text-zinc-400">{item.note}</p>}
-                  <div className="mt-3 max-w-xs">
-                    <ProductInterestModal optionType="wellness" selectedOption={`${category.name} - ${item.service}`} triggerLabel="Choose this option" />
-                  </div>
                 </div>
               ))}
             </div>
