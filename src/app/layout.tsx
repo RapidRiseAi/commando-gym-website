@@ -6,8 +6,8 @@ import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: { default: "Commando", template: "%s | Commando" },
-  description: "24/7 gym and onsite wellness studio in Sabie. Train with consistency and recover with purpose.",
+  title: { default: "Commando Gym Sabie", template: "%s | Commando Gym Sabie" },
+  description: "Premium dark-themed gym and spa in Sabie. Train with confidence and recover with purpose.",
   metadataBase: new URL(siteConfig.baseUrl)
 };
 

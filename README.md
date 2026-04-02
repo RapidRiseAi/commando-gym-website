@@ -25,8 +25,9 @@ Create `.env.local`:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.commandogym.co.za
 # Optional integration targets for /api/join wiring:
-# JOIN_WEBHOOK_URL= # Google Apps Script or webhook endpoint for lead notifications
-# PRODUCT_WEBHOOK_URL= # Optional dedicated webhook for membership/wellness option modal requests
+# JOIN_WEBHOOK_URL=
+# TURNSTILE_SITE_KEY=
+# TURNSTILE_SECRET_KEY=
 ```
 
 ## Commands
@@ -40,12 +41,9 @@ npm run start    # run built app
 ## Deployment
 - Works on Vercel or any Node runtime supporting Next.js App Router.
 - Configure env vars in deployment platform.
-- Cloudflare Workers deployment is configured with `@opennextjs/cloudflare`.
-- `wrangler.jsonc` points to `.open-next/worker.js` and `.open-next/assets`, and runs `npx @opennextjs/cloudflare build` before upload.
-- CI command `npx wrangler versions upload` should now compile OpenNext output and upload the worker+assets bundle instead of returning 404.
+- Replace `[OWNER_CONFIRMATION_REQUIRED]` placeholders in `src/content/site-content.ts` before launch.
 - For Cloudflare/OpenNext builds, keep `autoprefixer` + `postcss` installed in `devDependencies` because `src/app/globals.css` is compiled through PostCSS during `next build`.
 
 ## Notes
-- Business details and pricing in `src/content/site-content.ts` are configured for Commando in Sabie.
-- Motivational visuals are configured via remote image URLs in content/code so PRs do not require binary image files.
+- Factual business details are intentionally placeholdered unless verified.
 - See `RESEARCH_NOTES.md` and `BUILD_SUMMARY.md` for implementation context.

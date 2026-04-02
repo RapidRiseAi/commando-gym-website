@@ -2,40 +2,16 @@ import { NextResponse } from "next/server";
 import { joinSchema } from "@/lib/validation";
 
 export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const parsed = joinSchema.safeParse(body);
+  const body = await request.json();
+  const parsed = joinSchema.safeParse(body);
 
-    if (!parsed.success) {
-      return NextResponse.json({ success: false, errors: parsed.error.flatten() }, { status: 400 });
-    }
-
-    const appScriptUrl = process.env.JOIN_WEBHOOK_URL;
-
-    if (appScriptUrl) {
-      const webhookResponse = await fetch(appScriptUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed.data)
-      });
-
-      if (!webhookResponse.ok) {
-        return NextResponse.json({
-          success: false,
-          message: "Submission failed to route. Please contact WhatsApp +27 60 971 0050."
-        }, { status: 502 });
-      }
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: "Thanks — your request has been received. We'll contact you within 24 hours.",
-      data: parsed.data
-    });
-  } catch {
-    return NextResponse.json({
-      success: false,
-      message: "Unexpected error. Please contact WhatsApp +27 60 971 0050."
-    }, { status: 500 });
+  if (!parsed.success) {
+    return NextResponse.json({ success: false, errors: parsed.error.flatten() }, { status: 400 });
   }
+
+  return NextResponse.json({
+    success: true,
+    message: "Lead captured. Wire this endpoint to CRM/email automation.",
+    data: parsed.data
+  });
 }
