@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import { businessFacts, faqGroups, homeContent, mediaAssets, testimonials } from "@/content/site-content";
 
 export const metadata = buildMetadata(
-  "24/7 Gym & Onsite Wellness Studio in Sabie",
-  "Commando offers 24/7 gym access in Sabie plus an appointment-only Onsite Wellness Studio.",
+  "24/7 Gym + Wellness & Beauty Studio in Sabie",
+  "Commando offers 24/7 gym access plus appointment-based wellness and beauty treatments in Sabie.",
   "/"
 );
 
@@ -28,9 +28,13 @@ export default function HomePage() {
       <section className="border-b border-border bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_45%)]">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-zinc-400">Gym + Wellness Studio in Sabie</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-zinc-400">24/7 Gym + Wellness & Beauty Studio in Sabie</p>
             <h1 className="text-4xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
             <p className="mt-4 max-w-xl text-zinc-300">{homeContent.hero.subheadline}</p>
+            <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3 text-sm text-zinc-200">
+              <p className="font-semibold">Wellness & beauty services on-site:</p>
+              <p className="mt-1 text-zinc-300">Sports massage • Swedish massage • Facial care • Waxing • Hand & foot care</p>
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</Button>
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
