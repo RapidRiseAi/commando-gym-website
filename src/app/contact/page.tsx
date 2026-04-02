@@ -1,44 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { ContactForm } from "@/components/forms/contact-form";
 import { businessFacts } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata("Contact", "Contact Commando in Sabie for gym access and wellness bookings.", "/contact");
+export const metadata = buildMetadata("Contact & Location", "Contact Commando Gym Sabie, view map and operating details.", "/contact");
 
 export default function ContactPage() {
-  const waLink = "https://wa.me/27609710050";
-  const telLink = "tel:+27609710050";
   return (
-    <Section title="Contact Commando" subtitle="Reach us directly on WhatsApp for memberships and wellness bookings.">
+    <Section title="Contact & Location" subtitle="Visit us in Sabie or reach out for a guided start.">
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="mobile-card space-y-3 text-zinc-300 md:p-5">
+        <div className="space-y-3 rounded-2xl border border-border bg-surface p-5 text-zinc-300">
           <p><strong>Address:</strong> {businessFacts.address}</p>
           <p><strong>Phone:</strong> {businessFacts.phone}</p>
           <p><strong>WhatsApp:</strong> {businessFacts.whatsapp}</p>
           <p><strong>Email:</strong> {businessFacts.email}</p>
-          <p><strong>Gym hours:</strong> {businessFacts.hours}</p>
-          <p><strong>Wellness Studio:</strong> 08:00–16:00, appointment only.</p>
+          <p><strong>Hours:</strong> {businessFacts.hours}</p>
+          <p><strong>Parking:</strong> [OWNER_CONFIRMATION_REQUIRED]</p>
         </div>
-        <div className="mobile-card md:p-5">
+        <div className="rounded-2xl border border-border bg-surface p-5">
           <p className="mb-3 text-zinc-300">Map link:</p>
-          <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
-          <div className="mt-5 hidden flex-wrap gap-3 md:flex">
-            <Button href={waLink}>WhatsApp now</Button>
-            <Button href={telLink} variant="secondary">Call now</Button>
+          <a className="underline" href={businessFacts.mapLink} target="_blank">Open map</a>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button href="/join">Join now</Button>
+            <Button href="#" variant="secondary">Call now</Button>
+            <Button href="#" variant="secondary">WhatsApp now</Button>
           </div>
-          <div className="mt-5 grid grid-cols-1 gap-2 md:hidden">
-            <Button href={waLink}>WhatsApp us directly</Button>
-            <Button href={telLink} variant="secondary">Call the team</Button>
-            <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
-          </div>
-          <p className="mt-4 text-sm text-zinc-300">
-            If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.
-          </p>
         </div>
-      </div>
-      <div className="mt-6">
-        <ContactForm />
       </div>
     </Section>
   );
