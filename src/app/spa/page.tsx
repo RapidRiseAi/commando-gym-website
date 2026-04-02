@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { mediaAssets, wellnessStudio } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
+import { ProductInterestModal } from "@/components/forms/product-interest-modal";
 
 export const metadata = buildMetadata("Onsite Wellness Studio", "Appointment-only wellness treatments in Sabie, including massage, facials, waxing, and more.", "/spa");
 
@@ -44,6 +45,9 @@ export default function SpaPage() {
                   </div>
                   {item.duration && <p className="text-sm text-zinc-300">{item.duration}</p>}
                   {item.note && <p className="text-xs text-zinc-400">{item.note}</p>}
+                  <div className="mt-3 max-w-xs">
+                    <ProductInterestModal optionType="wellness" selectedOption={`${category.name} - ${item.service}`} triggerLabel="Choose this option" />
+                  </div>
                 </div>
               ))}
             </div>

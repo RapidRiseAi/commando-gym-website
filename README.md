@@ -26,6 +26,7 @@ Create `.env.local`:
 NEXT_PUBLIC_SITE_URL=https://www.commandogym.co.za
 # Optional integration targets for /api/join wiring:
 # JOIN_WEBHOOK_URL= # Google Apps Script or webhook endpoint for lead notifications
+# PRODUCT_WEBHOOK_URL= # Optional dedicated webhook for membership/wellness option modal requests
 ```
 
 ## Commands

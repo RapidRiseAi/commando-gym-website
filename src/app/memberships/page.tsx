@@ -1,8 +1,8 @@
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { mediaAssets, memberships } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
+import { ProductInterestModal } from "@/components/forms/product-interest-modal";
 
 export const metadata = buildMetadata("Memberships & Pricing", "Daily, weekly, monthly, couples, and student gym pricing in Sabie.", "/memberships");
 
@@ -22,7 +22,9 @@ export default function MembershipsPage() {
               <p className="mt-2 text-sm text-zinc-300">{plan.description}</p>
               <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-zinc-300">{plan.includes.map((i) => <li key={i}>{i}</li>)}</ul>
               <p className="mt-2 text-xs text-zinc-400">{plan.spa}</p>
-              <Button href="/join" className="mt-4 w-full">Join with this option</Button>
+              <div className="mt-4">
+                <ProductInterestModal optionType="membership" selectedOption={plan.name} triggerLabel="Choose this option" />
+              </div>
             </article>
           ))}
         </div>
@@ -33,7 +35,9 @@ export default function MembershipsPage() {
             <h3 className="text-2xl font-bold">{plan.name}</h3><p className="text-zinc-400">{plan.price}</p>
             <ul className="mt-3 space-y-2 text-sm text-zinc-300">{plan.includes.map((i) => <li key={i}>• {i}</li>)}</ul>
             <p className="mt-2 text-xs text-zinc-400">{plan.spa}</p>
-            <Button href="/join" className="mt-4 w-full">Join with this option</Button>
+            <div className="mt-4">
+              <ProductInterestModal optionType="membership" selectedOption={plan.name} triggerLabel="Choose this option" />
+            </div>
           </article>
         ))}
       </div>

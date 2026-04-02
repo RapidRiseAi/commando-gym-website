@@ -16,3 +16,16 @@ export const joinSchema = z.object({
 });
 
 export type JoinFormData = z.infer<typeof joinSchema>;
+
+export const productInterestSchema = z.object({
+  option_type: z.enum(["membership", "wellness"]),
+  selected_option: z.string().min(2, "Please select an option."),
+  full_name: z.string().min(2, "Please add your name."),
+  phone_or_whatsapp: z.string().min(7, "Please add a contact number."),
+  preferred_contact_method: z.enum(["whatsapp", "phone", "email"]),
+  preferred_date: z.string().optional(),
+  notes: z.string().max(500).optional(),
+  consent_checkbox: z.boolean().refine(Boolean, "Consent is required to submit.")
+});
+
+export type ProductInterestData = z.infer<typeof productInterestSchema>;
