@@ -27,18 +27,18 @@ export default function HomePage() {
     <>
       <section className="border-b border-border bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_45%)]">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:gap-8 md:px-6 md:py-24">
-          <div>
+          <div className="order-2 md:order-1">
             <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
               24/7 Gym + Wellness & Beauty Studio in Sabie
             </p>
             <h1 className="text-3xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
             <p className="mt-3 max-w-xl text-sm text-zinc-300 md:mt-4 md:text-base">{homeContent.hero.subheadline}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 hidden flex-wrap gap-3 md:flex">
               <Button href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</Button>
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative order-1 md:order-2">
             <div className="overflow-hidden rounded-3xl border border-border shadow-glow">
               <Image
                 src={mediaAssets.hero.src}
@@ -81,7 +81,10 @@ export default function HomePage() {
       <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to facials and waxing, wellness services are available by appointment.">
         <div className="rounded-2xl border border-border bg-surface p-6">
           <p className="text-zinc-300">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
-          <div className="mt-4 flex gap-3"><Button href="/spa">View Wellness Pricing</Button><Button href="/join" variant="secondary">Join Commando</Button></div>
+          <div className="mt-4 flex gap-3">
+            <Button href="/spa">View Wellness Pricing</Button>
+            <Button href="/join" variant="secondary" className="hidden md:inline-flex">Join Commando</Button>
+          </div>
         </div>
       </Section>
 
@@ -109,10 +112,15 @@ export default function HomePage() {
       </Section>
 
       <Section title="Start where you are." subtitle="No contracts. No unnecessary barriers. Just a clear path to train and improve.">
-        <div className="flex flex-wrap gap-3">
+        <div className="hidden flex-wrap gap-3 md:flex">
           <Button href="/join">Join Now</Button>
           <Button href="/contact" variant="secondary">Contact the Team</Button>
           <Link href="/memberships" className="inline-flex min-h-10 items-center px-3 text-sm text-zinc-300 underline md:min-h-11">Explore membership options</Link>
+        </div>
+        <div className="md:hidden">
+          <Link href="/memberships" className="inline-flex min-h-10 items-center text-sm text-zinc-300 underline">
+            Explore membership options
+          </Link>
         </div>
       </Section>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }} />

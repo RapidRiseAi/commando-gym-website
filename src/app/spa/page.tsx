@@ -46,7 +46,7 @@ export default function SpaPage() {
                         optionType="wellness"
                         selectedOption={`${category.name} - ${item.service}`}
                         triggerLabel="Choose this option"
-                        triggerClassName="min-h-8 rounded-lg px-3 py-1 text-xs"
+                        triggerClassName="hidden min-h-8 rounded-lg px-3 py-1 text-xs md:inline-flex"
                       />
                     </div>
                     <p className="font-bold">{item.price}</p>
@@ -56,11 +56,14 @@ export default function SpaPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-3 md:hidden">
+              <ProductInterestModal optionType="wellness" selectedOption={category.name} triggerLabel={`Request ${category.name}`} triggerClassName="w-full" />
+            </div>
           </article>
         ))}
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-3">
+      <div className="mt-4 hidden flex-wrap gap-3 md:flex">
         <Button href="/contact">Book via WhatsApp</Button>
         <Button href="/join" variant="secondary">Join Commando</Button>
       </div>
