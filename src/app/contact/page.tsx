@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
+import { ContactForm } from "@/components/forms/contact-form";
 import { businessFacts } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
@@ -23,9 +24,8 @@ export default function ContactPage() {
           <p className="mb-3 text-zinc-300">Map link:</p>
           <a className="underline" href={businessFacts.mapLink} target="_blank" rel="noreferrer">Open map</a>
           <div className="mt-5 hidden flex-wrap gap-3 md:flex">
-            <Button href="/join">Join now</Button>
+            <Button href={waLink}>WhatsApp now</Button>
             <Button href={telLink} variant="secondary">Call now</Button>
-            <Button href={waLink} variant="secondary">WhatsApp now</Button>
           </div>
           <div className="mt-5 space-y-2 text-sm md:hidden">
             <a href={waLink} className="inline-flex items-center underline">WhatsApp us directly</a>
@@ -35,6 +35,9 @@ export default function ContactPage() {
             If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.
           </p>
         </div>
+      </div>
+      <div className="mt-6">
+        <ContactForm />
       </div>
     </Section>
   );

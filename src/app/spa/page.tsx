@@ -71,7 +71,7 @@ export default function SpaPage() {
 
       <div className="mt-4 hidden flex-wrap gap-3 md:flex">
         <Button href="/contact">Book via WhatsApp</Button>
-        <Button href="/join" variant="secondary">Join Commando</Button>
+        <Button href="/memberships" variant="secondary">Join Commando</Button>
       </div>
     </Section>
   );

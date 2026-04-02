@@ -83,7 +83,7 @@ export default function HomePage() {
           <p className="mobile-copy">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3">
             <Button href="/spa">View Wellness Pricing</Button>
-            <Button href="/join" variant="secondary" className="hidden md:inline-flex">Join Commando</Button>
+            <Button href="/memberships" variant="secondary" className="hidden md:inline-flex">Join Commando</Button>
           </div>
         </div>
       </Section>
@@ -113,7 +113,7 @@ export default function HomePage() {
 
       <Section title="Start where you are." subtitle="No contracts. No unnecessary barriers. Just a clear path to train and improve.">
         <div className="hidden flex-wrap gap-3 md:flex">
-          <Button href="/join">Join Now</Button>
+          <Button href="/memberships">Join Now</Button>
           <Button href="/contact" variant="secondary">Contact the Team</Button>
           <Link href="/memberships" className="inline-flex min-h-10 items-center px-3 text-sm text-zinc-300 underline md:min-h-11">Explore membership options</Link>
         </div>

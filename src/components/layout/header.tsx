@@ -23,7 +23,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Button href="/join" className="hidden md:inline-flex">
+        <Button href="/memberships" className="hidden md:inline-flex">
           Join Now
         </Button>
         <button

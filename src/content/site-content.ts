@@ -6,7 +6,7 @@ export const navItems = [
   { href: "/rules", label: "Rules" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
-  { href: "/join", label: "Join Now" }
+  { href: "/memberships", label: "Join Now" }
 ];
 
 export const businessFacts = {
@@ -28,7 +28,7 @@ export const homeContent = {
     headline: "Train Anytime. Recover Properly. Stay Consistent.",
     subheadline:
       "Commando is Sabie’s 24/7 training space with an Onsite Wellness Studio. Whether you are just starting or already active, we give you the structure and environment to keep moving forward.",
-    primaryCta: { label: "Join Now", href: "/join" },
+    primaryCta: { label: "Join Now", href: "/memberships" },
     secondaryCta: { label: "View Memberships", href: "/memberships" }
   },
   motivation: {
