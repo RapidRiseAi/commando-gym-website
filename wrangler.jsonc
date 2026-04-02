@@ -2,7 +2,13 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "commando-gym-website",
   "compatibility_date": "2026-04-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".open-next/worker.js",
   "assets": {
-    "directory": "./public"
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "build": {
+    "command": "npx @opennextjs/cloudflare build"
   }
 }
