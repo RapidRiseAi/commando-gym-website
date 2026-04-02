@@ -18,7 +18,7 @@ export default function AboutPage() {
           </figcaption>
         </figure>
 
-        <div className="order-2 space-y-4 rounded-2xl border border-border bg-surface p-6 text-zinc-300 lg:order-1">
+        <div className="mobile-card order-2 space-y-4 lg:order-1">
           <p>
             Commando was built for people who refuse to quit on themselves. Whether you are taking your first step into fitness or returning
             after a long break, our mission is to give you a space where progress feels possible every single day.
@@ -35,7 +35,7 @@ export default function AboutPage() {
             Beyond training, our Onsite Wellness Studio provides recovery and self-care support to help you stay consistent over time. From
             massage and treatment options to intentional recovery, we believe real results come from balancing effort with restoration.
           </p>
-          <p className="text-base font-semibold text-foreground">
+          <p className="text-sm font-semibold text-foreground md:text-base">
             At Commando, we do not just build workouts — we build confidence, commitment, and a lifestyle you can sustain.
           </p>
         </div>

@@ -32,7 +32,7 @@ export default function HomePage() {
               24/7 Gym + Wellness & Beauty Studio in Sabie
             </p>
             <h1 className="text-3xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
-            <p className="mt-3 max-w-xl text-sm text-zinc-300 md:mt-4 md:text-base">{homeContent.hero.subheadline}</p>
+            <p className="mobile-copy mt-3 max-w-xl md:mt-4">{homeContent.hero.subheadline}</p>
             <div className="mt-6 hidden flex-wrap gap-3 md:flex">
               <Button href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</Button>
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
@@ -69,8 +69,8 @@ export default function HomePage() {
           {mediaAssets.highlights.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-2xl border border-border bg-surface">
               <Image src={item.src} alt={item.alt} width={900} height={650} className="h-44 w-full object-cover" />
-              <div className="p-5">
-                <h3 className="text-lg font-bold">{item.title}</h3>
+              <div className="p-4 md:p-5">
+                <h3 className="text-base font-bold md:text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm text-zinc-300">{item.body}</p>
               </div>
             </article>
@@ -79,8 +79,8 @@ export default function HomePage() {
       </Section>
 
       <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to facials and waxing, wellness services are available by appointment.">
-        <div className="rounded-2xl border border-border bg-surface p-6">
-          <p className="text-zinc-300">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
+        <div className="mobile-card">
+          <p className="mobile-copy">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3">
             <Button href="/spa">View Wellness Pricing</Button>
             <Button href="/join" variant="secondary" className="hidden md:inline-flex">Join Commando</Button>
@@ -91,7 +91,7 @@ export default function HomePage() {
       <Section title="Real member momentum" subtitle="Built around consistency, support, and local community progress.">
         <div className="grid gap-4 md:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.quote} className="rounded-2xl border border-border bg-surface p-5">
+            <article key={item.quote} className="mobile-card">
               <p className="text-zinc-200">“{item.quote}”</p>
               <p className="mt-4 text-sm font-semibold">{item.name}</p>
               <p className="text-xs text-zinc-400">{item.context}</p>

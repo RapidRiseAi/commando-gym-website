@@ -14,7 +14,7 @@ export default function SpaPage() {
         <Image src={mediaAssets.wellness.src} alt={mediaAssets.wellness.alt} width={1400} height={700} className="h-56 w-full object-cover md:h-72" />
       </div>
 
-      <div className="rounded-xl border border-border bg-surface p-4 text-sm text-zinc-200">
+      <div className="mobile-card text-sm text-zinc-200 md:text-base">
         <p><strong>Hours:</strong> {wellnessStudio.hours}</p>
         <p><strong>Booking:</strong> {wellnessStudio.bookingLine}</p>
         <p><strong>Member benefit:</strong> {wellnessStudio.memberBenefit}</p>
@@ -34,11 +34,11 @@ export default function SpaPage() {
 
       <div className="mt-6 space-y-5">
         {wellnessStudio.categories.map((category) => (
-          <article id={category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} key={category.name} className="scroll-mt-24 rounded-2xl border border-border bg-surface p-5">
-            <h3 className="text-xl font-bold">{category.name}</h3>
-            <div className="mt-3 space-y-2">
+          <article id={category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} key={category.name} className="mobile-card scroll-mt-24">
+            <h3 className="text-lg font-bold md:text-xl">{category.name}</h3>
+            <div className="mt-3 space-y-2.5">
               {category.items.map((item) => (
-                <div key={`${item.service}-${item.duration}-${item.price}`} className="rounded-lg border border-border/70 p-3">
+                <div key={`${item.service}-${item.duration}-${item.price}`} className="mobile-card-compact">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                       <p className="font-semibold">{item.service}</p>
@@ -51,7 +51,7 @@ export default function SpaPage() {
                     </div>
                     <p className="font-bold">{item.price}</p>
                   </div>
-                  {item.duration && <p className="text-sm text-zinc-300">{item.duration}</p>}
+                  {item.duration && <p className="text-xs text-zinc-300 md:text-sm">{item.duration}</p>}
                   {item.note && <p className="text-xs text-zinc-400">{item.note}</p>}
                 </div>
               ))}

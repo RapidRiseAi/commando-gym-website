@@ -22,7 +22,7 @@ const initialData: JoinFormData = {
   consent_checkbox: false
 };
 
-const fieldClass = "min-h-11 w-full rounded-lg border border-border bg-black px-3";
+const fieldClass = "min-h-10 w-full rounded-lg border border-border bg-black px-3 md:min-h-11";
 
 export function JoinForm() {
   const [data, setData] = useState<JoinFormData>(initialData);
@@ -61,7 +61,7 @@ export function JoinForm() {
   };
 
   return (
-    <form onSubmit={submit} className="space-y-4 rounded-2xl border border-border bg-surface p-5 shadow-glow md:p-8">
+    <form onSubmit={submit} className="space-y-4 rounded-2xl border border-border bg-surface p-4 shadow-glow md:p-8">
       <p className="text-sm text-zinc-300">You can complete this in under two minutes. We’ll contact you on your preferred method.</p>
       <div className="grid gap-4 md:grid-cols-2">
         <label className="text-sm">Full name<input className={fieldClass} value={data.full_name} onChange={(e) => setField("full_name", e.target.value)} /></label>

@@ -16,10 +16,10 @@ export default function MembershipsPage() {
       <div className="md:hidden">
         <div className="flex snap-x gap-4 overflow-x-auto pb-4">
           {memberships.map((plan) => (
-            <article key={plan.name} className="min-w-[86%] snap-center rounded-2xl border border-border bg-surface p-5">
-              <h3 className="text-2xl font-bold">{plan.name}</h3>
+            <article key={plan.name} className="mobile-card min-w-[86%] snap-center">
+              <h3 className="text-xl font-bold md:text-2xl">{plan.name}</h3>
               <p className="text-zinc-400">{plan.price}</p>
-              <p className="mt-2 text-sm text-zinc-300">{plan.description}</p>
+              <p className="mobile-copy mt-2">{plan.description}</p>
               <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-zinc-300">{plan.includes.map((i) => <li key={i}>{i}</li>)}</ul>
               <p className="mt-2 text-xs text-zinc-400">{plan.spa}</p>
               <div className="mt-4">
@@ -41,10 +41,10 @@ export default function MembershipsPage() {
           </article>
         ))}
       </div>
-      <div className="mt-6 rounded-xl border border-border bg-surface p-4 text-sm text-zinc-300">
+      <div className="mobile-card mt-6 text-sm text-zinc-300 md:text-base">
         No sign-up fee and no fixed contract on standard options. Need help choosing? Message us on WhatsApp via the Contact page.
       </div>
-      <div className="mt-6 rounded-xl border border-border bg-surface p-4 md:hidden">
+      <div className="mobile-card mt-6 md:hidden">
         <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-zinc-400">Who it&apos;s for</h3>
         <div className="mt-3 space-y-2 text-sm text-zinc-200">
           <div className="grid grid-cols-[1fr_auto] gap-3 rounded-lg border border-border/60 p-3"><p>Daily Pass</p><p className="font-semibold">R50</p><p className="col-span-2 text-xs text-zinc-400">Visitors / flexible access</p></div>
