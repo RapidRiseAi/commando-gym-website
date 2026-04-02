@@ -95,16 +95,24 @@ export function JoinForm() {
         </label>
       </div>
 
-      <details className="rounded-xl border border-border/70 p-3 md:border-0 md:p-0" open>
-        <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400 md:list-none">Optional details</summary>
-        <div className="mt-3 grid gap-4 md:grid-cols-2">
+      <details className="rounded-xl border border-border/70 p-3 md:hidden">
+        <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">Optional details</summary>
+        <div className="mt-3 grid gap-4">
           <label className="text-sm">Age range (optional)<input className={fieldClass} value={data.age_range} onChange={(e) => setField("age_range", e.target.value)} /></label>
           <label className="text-sm">Preferred start date<input className={fieldClass} type="date" value={data.preferred_start_date} onChange={(e) => setField("preferred_start_date", e.target.value)} /></label>
+          <label className="block text-sm">Message (optional)
+            <textarea className="min-h-24 w-full rounded-lg border border-border bg-black px-3 py-2" value={data.message} onChange={(e) => setField("message", e.target.value)} />
+          </label>
         </div>
-        <label className="mt-4 block text-sm">Message (optional)
+      </details>
+
+      <div className="hidden gap-4 md:grid md:grid-cols-2">
+        <label className="text-sm">Age range (optional)<input className={fieldClass} value={data.age_range} onChange={(e) => setField("age_range", e.target.value)} /></label>
+        <label className="text-sm">Preferred start date<input className={fieldClass} type="date" value={data.preferred_start_date} onChange={(e) => setField("preferred_start_date", e.target.value)} /></label>
+        <label className="block text-sm md:col-span-2">Message (optional)
           <textarea className="min-h-24 w-full rounded-lg border border-border bg-black px-3 py-2" value={data.message} onChange={(e) => setField("message", e.target.value)} />
         </label>
-      </details>
+      </div>
 
       {Object.entries(errors).length > 0 && (
         <ul className="list-disc space-y-1 pl-5 text-xs text-red-400">{Object.values(errors).map((err) => err && <li key={err}>{err}</li>)}</ul>

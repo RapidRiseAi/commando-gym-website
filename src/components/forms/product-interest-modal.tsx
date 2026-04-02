@@ -66,8 +66,8 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel,
       <Button onClick={() => setOpen(true)} className={triggerClassName ?? "w-full"}>{triggerLabel}</Button>
 
       {open && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4">
-          <div className="w-full max-w-lg rounded-2xl border border-border bg-surface p-5 shadow-glow">
+        <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 p-3 md:items-center md:p-4">
+          <div className="max-h-[85vh] w-full overflow-y-auto rounded-2xl border border-border bg-surface p-4 shadow-glow md:max-h-none md:max-w-lg md:p-5">
             <div className="mb-4 flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-xl font-bold">Request this option</h3>
