@@ -19,8 +19,7 @@ export const businessFacts = {
   hours: "Gym access: 24/7",
   socialProof: [
     { label: "Open access", value: "24/7" },
-    { label: "Onsite Wellness Studio", value: "Appointment only" },
-    { label: "Standard pricing", value: "Published in R" }
+    { label: "Appointment only", value: "Wellness & beauty studio" }
   ]
 };
 
