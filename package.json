@@ -6,10 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run cf:deploy",
-    "cf:build": "npx @opennextjs/cloudflare build",
-    "cf:deploy": "npm run cf:build && npx wrangler deploy"
+    "lint": "next lint"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -20,7 +17,6 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.6.0",
     "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
