@@ -42,6 +42,10 @@ export const mediaAssets = {
     src: "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1800",
     alt: "Athlete training with free weights in a premium gym"
   },
+  aboutBuilding: {
+    src: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&fit=crop&w=1400&q=80",
+    alt: "Exterior of a modern gym building at street level"
+  },
   highlights: [
     {
       src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
