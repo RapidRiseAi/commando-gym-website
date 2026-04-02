@@ -26,13 +26,13 @@ export default function HomePage() {
   return (
     <>
       <section className="border-b border-border bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_45%)]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:gap-8 md:px-6 md:py-24">
           <div>
             <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
               24/7 Gym + Wellness & Beauty Studio in Sabie
             </p>
-            <h1 className="text-4xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
-            <p className="mt-4 max-w-xl text-zinc-300">{homeContent.hero.subheadline}</p>
+            <h1 className="text-3xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
+            <p className="mt-3 max-w-xl text-sm text-zinc-300 md:mt-4 md:text-base">{homeContent.hero.subheadline}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</Button>
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
@@ -49,11 +49,11 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="absolute inset-x-4 bottom-4 grid gap-3 rounded-2xl border border-white/20 bg-black/75 p-4 backdrop-blur">
+            <div className="absolute inset-x-3 bottom-3 grid gap-2 rounded-2xl border border-white/20 bg-black/75 p-3 backdrop-blur md:inset-x-4 md:bottom-4 md:gap-3 md:p-4">
               {businessFacts.socialProof.map((item) => (
                 <div key={item.label}>
-                  <p className="text-2xl font-bold">{item.value}</p>
-                  <p className="text-sm text-zinc-300">{item.label}</p>
+                  <p className="text-xl font-bold md:text-2xl">{item.value}</p>
+                  <p className="text-xs text-zinc-300 md:text-sm">{item.label}</p>
                 </div>
               ))}
               <div className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-zinc-200">
@@ -112,7 +112,7 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3">
           <Button href="/join">Join Now</Button>
           <Button href="/contact" variant="secondary">Contact the Team</Button>
-          <Link href="/memberships" className="inline-flex min-h-11 items-center px-3 text-zinc-300 underline">Explore membership options</Link>
+          <Link href="/memberships" className="inline-flex min-h-10 items-center px-3 text-sm text-zinc-300 underline md:min-h-11">Explore membership options</Link>
         </div>
       </Section>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }} />
