@@ -22,14 +22,15 @@ export default function ContactPage() {
         </div>
         <div className="mobile-card md:p-5">
           <p className="mb-3 text-zinc-300">Map link:</p>
-          <a className="underline" href={businessFacts.mapLink} target="_blank" rel="noreferrer">Open map</a>
+          <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
           <div className="mt-5 hidden flex-wrap gap-3 md:flex">
             <Button href={waLink}>WhatsApp now</Button>
             <Button href={telLink} variant="secondary">Call now</Button>
           </div>
-          <div className="mt-5 space-y-2 text-sm md:hidden">
-            <a href={waLink} className="inline-flex items-center underline">WhatsApp us directly</a>
-            <a href={telLink} className="inline-flex items-center underline">Call the team</a>
+          <div className="mt-5 grid grid-cols-1 gap-2 md:hidden">
+            <Button href={waLink}>WhatsApp us directly</Button>
+            <Button href={telLink} variant="secondary">Call the team</Button>
+            <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
           </div>
           <p className="mt-4 text-sm text-zinc-300">
             If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.
