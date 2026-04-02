@@ -12,6 +12,24 @@ html {
 
 body {
   @apply bg-bg text-white antialiased;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(120, 119, 198, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.14), transparent 35%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .mobile-card {
+    @apply rounded-2xl border border-border bg-surface p-4 md:p-6;
+  }
+
+  .mobile-card-compact {
+    @apply rounded-xl border border-border/70 p-3 md:p-4;
+  }
+
+  .mobile-copy {
+    @apply text-sm leading-6 text-zinc-300 md:text-base md:leading-7;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
