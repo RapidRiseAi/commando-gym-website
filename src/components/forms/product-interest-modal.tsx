@@ -9,17 +9,20 @@ type Props = {
   selectedOption: string;
   triggerLabel: string;
   triggerClassName?: string;
+  selectionOptions?: string[];
 };
 
 type Errors = Partial<Record<keyof ProductInterestData, string>>;
 
-export function ProductInterestModal({ optionType, selectedOption, triggerLabel, triggerClassName }: Props) {
+export function ProductInterestModal({ optionType, selectedOption, triggerLabel, triggerClassName, selectionOptions }: Props) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [step, setStep] = useState<"select" | "form">(selectionOptions?.length ? "select" : "form");
   const [errors, setErrors] = useState<Errors>({});
+  const [chosenOption, setChosenOption] = useState(selectedOption);
   const [formData, setFormData] = useState<ProductInterestData>({
     option_type: optionType,
-    selected_option: selectedOption,
+    selected_option: chosenOption,
     full_name: "",
     phone_or_whatsapp: "",
     preferred_contact_method: "whatsapp",
@@ -30,6 +33,23 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel,
 
   const setField = (field: keyof ProductInterestData, value: string | boolean) =>
     setFormData((prev) => ({ ...prev, [field]: value }));
+
+  const resetModalState = () => {
+    setStep(selectionOptions?.length ? "select" : "form");
+    setChosenOption(selectedOption);
+    setFormData((prev) => ({
+      ...prev,
+      selected_option: selectedOption,
+      full_name: "",
+      phone_or_whatsapp: "",
+      preferred_contact_method: "whatsapp",
+      preferred_date: "",
+      notes: "",
+      consent_checkbox: false
+    }));
+    setErrors({});
+    setStatus("idle");
+  };
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -55,7 +75,10 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel,
       });
       if (!res.ok) throw new Error("failed");
       setStatus("success");
-      setTimeout(() => setOpen(false), 1300);
+      setTimeout(() => {
+        setOpen(false);
+        resetModalState();
+      }, 1300);
     } catch {
       setStatus("error");
     }
@@ -63,22 +86,61 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel,
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} className={triggerClassName ?? "w-full"}>{triggerLabel}</Button>
+      <Button
+        onClick={() => {
+          resetModalState();
+          setOpen(true);
+        }}
+        className={triggerClassName ?? "w-full"}
+      >
+        {triggerLabel}
+      </Button>
 
       {open && (
         <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 p-3 md:items-center md:p-4">
           <div className="max-h-[85vh] w-full overflow-y-auto rounded-2xl border border-border bg-surface p-4 shadow-glow md:max-h-none md:max-w-lg md:p-5">
             <div className="mb-4 flex items-start justify-between gap-3">
               <div>
-                <h3 className="text-xl font-bold">Request this option</h3>
-                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-400">Selected option</p>
-                <div className="mt-1 rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
-                  {selectedOption} • {optionType === "membership" ? "Membership" : "Wellness Service"}
-                </div>
+                <h3 className="text-xl font-bold">{step === "select" ? "Choose your service option" : "Request this option"}</h3>
+                {step === "form" && (
+                  <>
+                    <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-400">Selected option</p>
+                    <div className="mt-1 rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
+                      {chosenOption} • {optionType === "membership" ? "Membership" : "Wellness Service"}
+                    </div>
+                  </>
+                )}
               </div>
-              <button type="button" onClick={() => setOpen(false)} className="text-zinc-400 hover:text-white">✕</button>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  resetModalState();
+                }}
+                className="text-zinc-400 hover:text-white"
+              >
+                ✕
+              </button>
             </div>
 
+            {step === "select" && selectionOptions?.length ? (
+              <div className="space-y-2">
+                {selectionOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => {
+                      setChosenOption(option);
+                      setFormData((prev) => ({ ...prev, selected_option: option }));
+                      setStep("form");
+                    }}
+                    className="w-full rounded-lg border border-border bg-black px-3 py-2.5 text-left text-sm text-zinc-100 hover:bg-zinc-900"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            ) : (
             <form onSubmit={submit} className="space-y-3">
               <label className="block text-sm">
                 Full name
@@ -121,6 +183,7 @@ export function ProductInterestModal({ optionType, selectedOption, triggerLabel,
               {status === "success" && <p className="text-sm text-emerald-300">Request sent. We’ll contact you shortly.</p>}
               {status === "error" && <p className="text-sm text-red-300">Could not send request. Please WhatsApp +27 60 971 0050.</p>}
             </form>
+            )}
           </div>
         </div>
       )}

@@ -57,7 +57,13 @@ export default function SpaPage() {
               ))}
             </div>
             <div className="mt-3 md:hidden">
-              <ProductInterestModal optionType="wellness" selectedOption={category.name} triggerLabel={`Request ${category.name}`} triggerClassName="w-full" />
+              <ProductInterestModal
+                optionType="wellness"
+                selectedOption={category.name}
+                selectionOptions={category.items.map((item) => `${category.name} - ${item.service}${item.duration ? ` (${item.duration})` : ""} - ${item.price}`)}
+                triggerLabel={`Request ${category.name}`}
+                triggerClassName="w-full"
+              />
             </div>
           </article>
         ))}
