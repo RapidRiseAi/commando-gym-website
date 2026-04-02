@@ -39,6 +39,7 @@ npm run start    # run built app
 ## Deployment
 - Works on Vercel or any Node runtime supporting Next.js App Router.
 - Configure env vars in deployment platform.
+- Cloudflare upload command `npx wrangler versions upload` now uses `wrangler.jsonc` with an explicit assets directory to prevent missing-entry-point failures.
 - For Cloudflare/OpenNext builds, keep `autoprefixer` + `postcss` installed in `devDependencies` because `src/app/globals.css` is compiled through PostCSS during `next build`.
 
 ## Notes
