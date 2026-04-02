@@ -41,7 +41,7 @@ npm run start    # run built app
 - Works on Vercel or any Node runtime supporting Next.js App Router.
 - Configure env vars in deployment platform.
 - Cloudflare Workers deployment is configured with `@opennextjs/cloudflare`.
-- `wrangler.jsonc` points to `.open-next/worker.js` and `.open-next/assets`, and runs `node scripts/cf-build.mjs` before upload.
+- `wrangler.jsonc` points to `.open-next/worker.js` and `.open-next/assets`, and runs `npx @opennextjs/cloudflare build` before upload.
 - In Cloudflare build settings, set the deploy command to `npm run deploy` (or `npm run cf:deploy`) **instead of** `npx wrangler deploy`.
 - For CI/Cloudflare, run build first, then deploy:
   - `npm run cf:build`
@@ -51,11 +51,9 @@ npm run start    # run built app
 - Why this can happen in production but not preview:
   - `npx wrangler deploy` can invoke `opennextjs-cloudflare deploy` directly, which expects OpenNext output to already exist.
   - Preview flows often run an explicit build step first, so the `.open-next` output is present.
-- Preview install failure root cause:
-  - `bun` can resolve `npx @opennextjs/cloudflare build` as `bun x @opennextjs/cloudflare build`, which may fail to discover an executable for the scoped package.
 - Hardening added in this repo:
-  - `cf:build` now uses `node scripts/cf-build.mjs`, which finds and runs the local OpenNext CLI entrypoint directly, then falls back to `npx` only if needed.
   - Build is not forced in `postinstall`, preventing preview installs from failing during dependency installation.
+  - Deploy scripts and Wrangler custom build both use the same OpenNext build command, so `.open-next/worker.js` is generated before upload.
 - For Cloudflare/OpenNext builds, keep `autoprefixer` + `postcss` installed in `devDependencies` because `src/app/globals.css` is compiled through PostCSS during `next build`.
 
 ## Notes
