@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { navItems } from "@/content/site-content";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import commandoLogo from "../../../commando-logo.png";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,8 +15,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="text-sm font-black uppercase tracking-[0.25em]">
-          Commando
+        <Link href="/" className="inline-flex items-center">
+          <Image src={commandoLogo} alt="Commando gym logo" width={140} height={40} className="h-8 w-auto invert" priority />
         </Link>
         <nav className="hidden gap-6 md:flex">
           {navItems.slice(0, -1).map((item) => (

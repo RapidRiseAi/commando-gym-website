@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import { businessFacts, faqGroups, homeContent, mediaAssets, testimonials } from "@/content/site-content";
 
 export const metadata = buildMetadata(
-  "24/7 Gym + Wellness & Beauty Studio in Sabie",
-  "Commando offers 24/7 gym access plus appointment-based wellness and beauty treatments in Sabie.",
+  "24/7 Gym + Fitness & Wellness Studio in Sabie",
+  "Commando offers 24/7 gym access plus appointment-based fitness and wellness services in Sabie.",
   "/"
 );
 
@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:gap-8 md:px-6 md:py-24">
           <div className="order-2 md:order-1">
             <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
-              24/7 Gym + Wellness & Beauty Studio in Sabie
+              24/7 Gym + Fitness & Wellness Studio in Sabie
             </p>
             <h1 className="text-3xl font-black leading-tight md:text-6xl">{homeContent.hero.headline}</h1>
             <p className="mobile-copy mt-3 max-w-xl md:mt-4">{homeContent.hero.subheadline}</p>
@@ -57,7 +57,7 @@ export default function HomePage() {
                 </div>
               ))}
               <div className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-zinc-200">
-                Wellness & beauty services: Sports massage • Swedish massage • Facial care • Waxing
+                Fitness & wellness services: Sports massage • Swedish massage • Waxing
               </div>
             </div>
           </div>
@@ -78,13 +78,30 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to facials and waxing, wellness services are available by appointment.">
+      <Section title="Gym gallery" subtitle="Take a look at the actual Commando training spaces and equipment.">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          {mediaAssets.gallery.map((image) => (
+            <article key={image.src} className="overflow-hidden rounded-2xl border border-border bg-surface">
+              <Image src={image.src} alt={image.alt} width={900} height={700} className="h-44 w-full object-cover md:h-40" />
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to waxing, wellness services are available by appointment.">
         <div className="mobile-card md:p-6">
           <p className="mobile-copy">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3">
             <Button href="/spa">View Wellness Pricing</Button>
             <Button href="/memberships" variant="secondary" className="hidden md:inline-flex">Join Commando</Button>
           </div>
+        </div>
+      </Section>
+
+      <Section title="Find us in Sabie" subtitle={`Visit us at ${businessFacts.address}.`}>
+        <div className="mobile-card flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:p-5">
+          <p className="mobile-copy text-zinc-300">{businessFacts.address}</p>
+          <Button href={businessFacts.mapLink}>Get directions</Button>
         </div>
       </Section>
 

@@ -21,8 +21,8 @@ export default function ContactPage() {
           <p><strong>Wellness Studio:</strong> 08:00–16:00, appointment only.</p>
         </div>
         <div className="mobile-card md:p-5">
-          <p className="mb-3 text-zinc-300">Map link:</p>
-          <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
+          <p className="mb-3 text-zinc-300">Need help finding us?</p>
+          <Button href={businessFacts.mapLink} variant="secondary">Get directions</Button>
           <div className="mt-5 hidden flex-wrap gap-3 md:flex">
             <Button href={waLink}>WhatsApp now</Button>
             <Button href={telLink} variant="secondary">Call now</Button>
@@ -30,7 +30,7 @@ export default function ContactPage() {
           <div className="mt-5 grid grid-cols-1 gap-2 md:hidden">
             <Button href={waLink}>WhatsApp us directly</Button>
             <Button href={telLink} variant="secondary">Call the team</Button>
-            <Button href={businessFacts.mapLink} variant="secondary">Open map</Button>
+            <Button href={businessFacts.mapLink} variant="secondary">Get directions</Button>
           </div>
           <p className="mt-4 text-sm text-zinc-300">
             If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.
