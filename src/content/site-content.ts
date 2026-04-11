@@ -81,8 +81,8 @@ export const mediaAssets = {
     alt: "Athlete resting between intense sets with gym equipment in background"
   },
   wellness: {
-    src: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1600&q=80",
-    alt: "Wellness treatment room with massage table"
+    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
+    alt: "Massage therapy setup with towels and oils"
   },
   gallery: [
     { src: benchPress, alt: "Bench press station at Commando gym" },
