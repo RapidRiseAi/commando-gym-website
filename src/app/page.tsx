@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { buildMetadata } from "@/lib/seo";
+import { GymGallery } from "@/components/home/gym-gallery";
 import { businessFacts, faqGroups, homeContent, mediaAssets, testimonials } from "@/content/site-content";
 
 export const metadata = buildMetadata(
@@ -79,17 +80,14 @@ export default function HomePage() {
       </Section>
 
       <Section title="Gym gallery" subtitle="Take a look at the actual Commando training spaces and equipment.">
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {mediaAssets.gallery.map((image, index) => (
-            <article key={`${image.alt}-${index}`} className="overflow-hidden rounded-2xl border border-border bg-surface">
-              <Image src={image.src} alt={image.alt} width={900} height={700} className="h-44 w-full object-cover md:h-40" />
-            </article>
-          ))}
-        </div>
+        <GymGallery images={mediaAssets.gallery} />
       </Section>
 
       <Section title="Onsite Wellness Studio" subtitle="From massage and lymph drainage to waxing, wellness services are available by appointment.">
-        <div className="mobile-card md:p-6">
+        <div className="overflow-hidden rounded-2xl border border-border bg-surface">
+          <Image src={mediaAssets.wellness.src} alt={mediaAssets.wellness.alt} width={1400} height={700} className="h-56 w-full object-cover md:h-72" />
+        </div>
+        <div className="mobile-card mt-4 md:p-6">
           <p className="mobile-copy">Open 08:00–16:00, appointment only. Non-members can book, and gym members get 20% discount on health treatments.</p>
           <div className="mt-4 flex gap-3">
             <Button href="/spa">View Wellness Pricing</Button>

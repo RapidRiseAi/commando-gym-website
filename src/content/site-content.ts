@@ -81,7 +81,7 @@ export const mediaAssets = {
     alt: "Athlete resting between intense sets with gym equipment in background"
   },
   wellness: {
-    src: "https://images.unsplash.com/photo-1611073615797-62c4e4b75b08?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1600&q=80",
     alt: "Wellness treatment room with massage table"
   },
   gallery: [
