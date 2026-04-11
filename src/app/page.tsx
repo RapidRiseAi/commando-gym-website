@@ -80,8 +80,8 @@ export default function HomePage() {
 
       <Section title="Gym gallery" subtitle="Take a look at the actual Commando training spaces and equipment.">
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {mediaAssets.gallery.map((image) => (
-            <article key={image.src} className="overflow-hidden rounded-2xl border border-border bg-surface">
+          {mediaAssets.gallery.map((image, index) => (
+            <article key={`${image.alt}-${index}`} className="overflow-hidden rounded-2xl border border-border bg-surface">
               <Image src={image.src} alt={image.alt} width={900} height={700} className="h-44 w-full object-cover md:h-40" />
             </article>
           ))}
