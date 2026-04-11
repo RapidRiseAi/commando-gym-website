@@ -26,7 +26,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
+    <header className="sticky top-0 z-[1000] border-b border-border/70 bg-black/80 backdrop-blur">
       <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 md:px-6">
         <Link href="/" className="absolute left-4 inline-flex items-center md:left-6">
           <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert md:h-24 md:w-24" priority />
@@ -56,7 +56,7 @@ export function Header() {
       {mobileOpen && (
         <div id="mobile-nav-menu" className="fixed inset-0 z-[999] md:hidden" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-black" onClick={closeMobileMenu} />
-          <div className="relative z-10 flex h-full flex-col px-4 pb-6 pt-20">
+          <div className="relative z-10 flex h-full flex-col px-4 pb-28 pt-20">
             <div className="mx-auto flex w-full max-w-lg flex-col rounded-2xl border border-white/10 bg-zinc-950 p-4 shadow-2xl">
               <button
                 type="button"
@@ -65,7 +65,7 @@ export function Header() {
               >
                 Close Menu
               </button>
-              <nav className="grid max-h-[70vh] gap-3 overflow-y-auto">
+              <nav className="grid max-h-full gap-3 overflow-y-auto pb-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
