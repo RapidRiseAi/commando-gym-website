@@ -32,6 +32,13 @@ body {
   }
 }
 
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

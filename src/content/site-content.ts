@@ -1,8 +1,18 @@
+import benchPress from "../../bench-press.jpg";
+import chestPress from "../../chest-press.jpg";
+import commandoExterior from "../../commando-exterior.jpg";
+import cyclingBike from "../../cycling-bike.jpg";
+import gymUpperFloor from "../../gym-upper-floor.jpg";
+import legPress from "../../legpress.jpg";
+import smithMachine from "../../smith-machine.jpg";
+import weights from "../../weights.jpg";
+import commandoLogo from "../../commando-logo.png";
+
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/memberships", label: "Memberships" },
-  { href: "/spa", label: "Wellness Studio" },
+  { href: "/spa", label: "Fitness & Wellness Studio" },
   { href: "/rules", label: "Rules" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -12,14 +22,14 @@ export const navItems = [
 export const businessFacts = {
   gymName: "Commando",
   address: "53 Main Rd, Sabie, 1260",
-  mapLink: "https://share.google/ii3QMLBhh5sSg1WoN",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=53+Main+Rd,+Sabie,+1260",
   phone: "+27 60 971 0050",
   whatsapp: "+27 60 971 0050",
   email: "WhatsApp only",
   hours: "Gym access: 24/7",
   socialProof: [
-    { label: "Open access", value: "24/7" },
-    { label: "Appointment only", value: "Wellness & beauty studio" }
+    { label: "Open access", value: "Gym open 24/7" },
+    { label: "Appointment only", value: "Fitness & wellness studio" }
   ]
 };
 
@@ -39,31 +49,31 @@ export const homeContent = {
 
 export const mediaAssets = {
   hero: {
-    src: "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1800",
-    alt: "Athlete training with free weights in a premium gym"
+    src: commandoExterior,
+    alt: "Exterior of Commando gym in Sabie"
   },
   aboutBuilding: {
-    src: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&fit=crop&w=1400&q=80",
-    alt: "Exterior of a modern gym building at street level"
+    src: commandoExterior,
+    alt: "Exterior of Commando gym in Sabie"
   },
   highlights: [
     {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
-      alt: "Coach guiding a member through a strength workout",
-      title: "Coaching-led consistency",
-      body: "Structured support that helps beginners and regular lifters build momentum."
+      src: weights,
+      alt: "Free weights setup at Commando gym",
+      title: "Strength-focused equipment",
+      body: "Train across key strength stations with equipment set up for consistent progress."
     },
     {
-      src: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
-      alt: "Member doing functional training in a dark premium gym interior",
+      src: cyclingBike,
+      alt: "Cycling and cardio zone at Commando gym",
       title: "24/7 training access",
-      body: "Train when your schedule allows, without compromising on environment or focus."
+      body: "Train when your schedule allows, with a full floor of cardio and strength options."
     },
     {
-      src: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Wellness treatment session in progress",
+      src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=80",
+      alt: "Massage treatment setup for recovery services",
       title: "Onsite recovery support",
-      body: "Massage, facial care, waxing, and wellness treatments in one location."
+      body: "Pair your training with massage and recovery-focused wellness services on-site."
     }
   ],
   memberships: {
@@ -71,8 +81,22 @@ export const mediaAssets = {
     alt: "Athlete resting between intense sets with gym equipment in background"
   },
   wellness: {
-    src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80",
-    alt: "Relaxed wellness environment with calm spa-like atmosphere"
+    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
+    alt: "Massage therapy setup with towels and oils"
+  },
+  gallery: [
+    { src: benchPress, alt: "Bench press station at Commando gym" },
+    { src: weights, alt: "Free weights section at Commando gym" },
+    { src: gymUpperFloor, alt: "Upper floor gym view at Commando" },
+    { src: chestPress, alt: "Chest press machine at Commando gym" },
+    { src: cyclingBike, alt: "Cycling equipment at Commando gym" },
+    { src: legPress, alt: "Leg press machine at Commando gym" },
+    { src: commandoExterior, alt: "Commando gym exterior in Sabie" },
+    { src: smithMachine, alt: "Smith machine area at Commando gym" }
+  ],
+  logo: {
+    src: commandoLogo,
+    alt: "Commando gym logo"
   }
 };
 
@@ -182,25 +206,6 @@ export const wellnessStudio = {
       ]
     },
     {
-      name: "Facial Care",
-      items: [
-        { service: "Vitamin Revitalization", duration: "", price: "R290" },
-        { service: "Deep Pore Cleanse", duration: "", price: "R290" },
-        { service: "Timeless Glow", duration: "", price: "R300" },
-        { service: "Brow & Lash Tint", duration: "", price: "R70 - R100" }
-      ]
-    },
-    {
-      name: "Facial Waxing",
-      items: [
-        { service: "Brow Wax and Shape", duration: "", price: "R70" },
-        { service: "Lip Wax", duration: "", price: "R70" },
-        { service: "Chin Wax", duration: "", price: "R70" },
-        { service: "Cheek Wax", duration: "", price: "R90" },
-        { service: "Full Face Wax", duration: "", price: "R250" }
-      ]
-    },
-    {
       name: "Body Waxing",
       items: [
         { service: "Underarm Wax", duration: "", price: "R130" },
@@ -252,7 +257,7 @@ export const faqGroups = [
   {
     title: "Wellness Studio",
     items: [
-      { q: "Do you offer wellness services?", a: "Yes. Our Onsite Wellness Studio offers massage, facial care, waxing, and hand/foot care." },
+      { q: "Do you offer wellness services?", a: "Yes. Our Onsite Wellness Studio offers massage, waxing, and hand/foot care." },
       { q: "Can non-members book wellness treatments?", a: "Yes. Non-members can book. Gym members receive 20% discount on health treatments." },
       { q: "When is the Wellness Studio open?", a: "08:00 to 16:00, appointment only." }
     ]

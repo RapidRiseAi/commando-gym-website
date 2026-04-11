@@ -5,7 +5,7 @@ import { mediaAssets, wellnessStudio } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 import { ProductInterestModal } from "@/components/forms/product-interest-modal";
 
-export const metadata = buildMetadata("Onsite Wellness Studio", "Appointment-only wellness treatments in Sabie, including massage, facials, waxing, and more.", "/spa");
+export const metadata = buildMetadata("Onsite Wellness Studio", "Appointment-only wellness treatments in Sabie, including massage, waxing, and recovery services.", "/spa");
 
 export default function SpaPage() {
   return (

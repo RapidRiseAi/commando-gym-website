@@ -1,20 +1,35 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { navItems } from "@/content/site-content";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import commandoLogo from "../../../commando-logo.png";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const closeMobileMenu = () => setMobileOpen(false);
 
+  useEffect(() => {
+    if (!mobileOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="text-sm font-black uppercase tracking-[0.25em]">
-          Commando
+    <header className="sticky top-0 z-[1000] border-b border-border/70 bg-black/95">
+      <div className="relative mx-auto flex h-16 max-w-[90rem] items-center justify-center px-4 md:px-6">
+        <Link href="/" className="absolute left-4 inline-flex items-center md:left-6">
+          <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert md:h-24 md:w-24" priority />
         </Link>
         <nav className="hidden gap-6 md:flex">
           {navItems.slice(0, -1).map((item) => (
@@ -23,12 +38,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Button href="/memberships" className="hidden md:inline-flex">
+        <Button href="/memberships" className="absolute right-6 hidden md:inline-flex">
           Join Now
         </Button>
         <button
           type="button"
-          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-sm font-semibold text-white md:hidden"
+          className="absolute right-4 inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-3 text-sm font-semibold text-white md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-menu"
@@ -39,33 +54,34 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-nav-menu" className="border-t border-border/70 bg-black/95 px-4 pb-4 pt-3 md:hidden">
-          <nav className="grid gap-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMobileMenu}
-                className="rounded-lg border border-border bg-surface px-3 py-2.5 text-sm font-medium text-zinc-100"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-            <Link href="/faq" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              FAQ
+        <div id="mobile-nav-menu" className="fixed inset-0 z-[1100] bg-black md:hidden" role="dialog" aria-modal="true">
+          <div className="flex h-16 items-center justify-between border-b border-white/10 px-4">
+            <Link href="/" className="inline-flex items-center" onClick={closeMobileMenu}>
+              <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert" priority />
             </Link>
-            <Link href="/terms" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Terms
-            </Link>
-            <Link href="/privacy" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Privacy
-            </Link>
-            <Link href="/media-policy" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Media Policy
-            </Link>
+            <button
+              type="button"
+              onClick={closeMobileMenu}
+              className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-3 text-sm font-semibold text-white"
+            >
+              Close
+            </button>
           </div>
+
+          <nav className="h-[calc(100vh-4rem)] overflow-y-auto bg-black px-4 pb-32 pt-4">
+            <div className="grid gap-3">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="rounded-xl border border-white/10 bg-zinc-950 px-4 py-4 text-lg font-medium text-zinc-100"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
         </div>
       )}
     </header>
