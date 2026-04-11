@@ -43,7 +43,7 @@ export function Header() {
         </Button>
         <button
           type="button"
-          className="absolute right-4 inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-sm font-semibold text-white md:hidden"
+          className="absolute right-4 inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-3 text-sm font-semibold text-white md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-menu"
@@ -54,34 +54,36 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-nav-menu" className="fixed inset-0 z-[999] md:hidden" role="dialog" aria-modal="true">
-          <div className="absolute inset-0 bg-black" onClick={closeMobileMenu} />
-          <div className="relative z-10 flex h-full flex-col px-4 pb-28 pt-20">
-            <div className="mx-auto flex w-full max-w-lg flex-col rounded-2xl border border-white/10 bg-zinc-950 p-4 shadow-2xl">
-              <button
-                type="button"
-                onClick={closeMobileMenu}
-                className="mb-3 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
-              >
-                Close Menu
-              </button>
-              <nav className="grid max-h-full gap-3 overflow-y-auto pb-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className="rounded-xl border border-white/10 bg-black px-4 py-4 text-lg font-medium text-zinc-100"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+        <div id="mobile-nav-menu" className="fixed inset-0 z-[1100] bg-black md:hidden" role="dialog" aria-modal="true">
+          <div className="flex h-16 items-center justify-between border-b border-white/10 px-4">
+            <Link href="/" className="inline-flex items-center" onClick={closeMobileMenu}>
+              <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert" priority />
+            </Link>
+            <button
+              type="button"
+              onClick={closeMobileMenu}
+              className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-3 text-sm font-semibold text-white"
+            >
+              Close
+            </button>
           </div>
+
+          <nav className="h-[calc(100vh-4rem)] overflow-y-auto px-4 pb-32 pt-4">
+            <div className="grid gap-3">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="rounded-xl border border-white/10 bg-zinc-950 px-4 py-4 text-lg font-medium text-zinc-100"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
         </div>
       )}
-
     </header>
   );
 }
