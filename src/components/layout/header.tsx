@@ -14,9 +14,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="inline-flex items-center">
-          <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-24 w-24 object-contain invert md:h-28 md:w-28" priority />
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 md:px-6">
+        <Link href="/" className="absolute left-4 inline-flex items-center md:left-6">
+          <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert md:h-24 md:w-24" priority />
         </Link>
         <nav className="hidden gap-6 md:flex">
           {navItems.slice(0, -1).map((item) => (
@@ -25,12 +25,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Button href="/memberships" className="hidden md:inline-flex">
+        <Button href="/memberships" className="absolute right-6 hidden md:inline-flex">
           Join Now
         </Button>
         <button
           type="button"
-          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-sm font-semibold text-white md:hidden"
+          className="absolute right-4 inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-sm font-semibold text-white md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-menu"
