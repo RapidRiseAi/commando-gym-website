@@ -28,7 +28,7 @@ export const businessFacts = {
   email: "WhatsApp only",
   hours: "Gym access: 24/7",
   socialProof: [
-    { label: "Open access", value: "24/7" },
+    { label: "Open access", value: "Gym open 24/7" },
     { label: "Appointment only", value: "Fitness & wellness studio" }
   ]
 };
