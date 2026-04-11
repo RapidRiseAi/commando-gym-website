@@ -30,7 +30,6 @@ export default function ContactPage() {
           <div className="mt-5 grid grid-cols-1 gap-2 md:hidden">
             <Button href={waLink}>WhatsApp us directly</Button>
             <Button href={telLink} variant="secondary">Call the team</Button>
-            <Button href={businessFacts.mapLink} variant="secondary">Get directions</Button>
           </div>
           <p className="mt-4 text-sm text-zinc-300">
             If the online form fails to submit, contact Chantelle on WhatsApp and we will assist as soon as possible.
