@@ -27,7 +27,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-[1000] border-b border-border/70 bg-black/95">
-      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 md:px-6">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 md:px-6">
         <Link href="/" className="absolute left-4 inline-flex items-center md:left-6">
           <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert md:h-24 md:w-24" priority />
         </Link>
