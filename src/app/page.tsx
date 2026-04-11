@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <>
       <section className="border-b border-border bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_45%)]">
-        <div className="mx-auto grid max-w-[90rem] gap-6 px-4 py-12 md:grid-cols-2 md:gap-8 md:px-6 md:py-24">
+        <div className="mx-auto grid max-w-[90rem] gap-6 px-4 py-12 md:grid-cols-2 md:items-start md:gap-8 md:px-6 md:py-20">
           <div className="order-2 md:order-1">
             <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
               24/7 Gym + Fitness & Wellness Studio in Sabie
@@ -39,14 +39,14 @@ export default function HomePage() {
               <Button href={homeContent.hero.secondaryCta.href} variant="secondary">{homeContent.hero.secondaryCta.label}</Button>
             </div>
           </div>
-          <div className="relative order-1 md:order-2">
+          <div className="relative order-1 md:order-2 md:ml-auto md:w-3/4">
             <div className="overflow-hidden rounded-3xl border border-border shadow-glow">
               <Image
                 src={mediaAssets.hero.src}
                 alt={mediaAssets.hero.alt}
                 width={1200}
                 height={900}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover md:max-h-[34rem]"
                 priority
               />
             </div>
