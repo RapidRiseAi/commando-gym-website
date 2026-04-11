@@ -49,8 +49,8 @@ export const homeContent = {
 
 export const mediaAssets = {
   hero: {
-    src: weights,
-    alt: "Free weights and strength equipment at Commando gym"
+    src: commandoExterior,
+    alt: "Exterior of Commando gym in Sabie"
   },
   aboutBuilding: {
     src: commandoExterior,
@@ -70,8 +70,8 @@ export const mediaAssets = {
       body: "Train when your schedule allows, with a full floor of cardio and strength options."
     },
     {
-      src: gymUpperFloor,
-      alt: "Massage and recovery area at Commando wellness studio",
+      src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=80",
+      alt: "Massage treatment setup for recovery services",
       title: "Onsite recovery support",
       body: "Pair your training with massage and recovery-focused wellness services on-site."
     }
@@ -81,8 +81,8 @@ export const mediaAssets = {
     alt: "Athlete resting between intense sets with gym equipment in background"
   },
   wellness: {
-    src: gymUpperFloor,
-    alt: "Upper floor training area at Commando gym"
+    src: "https://images.unsplash.com/photo-1611073615797-62c4e4b75b08?auto=format&fit=crop&w=1400&q=80",
+    alt: "Wellness treatment room with massage table"
   },
   gallery: [
     { src: benchPress, alt: "Bench press station at Commando gym" },
