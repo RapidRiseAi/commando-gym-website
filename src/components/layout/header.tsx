@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
         <Link href="/" className="inline-flex items-center">
-          <Image src={commandoLogo} alt="Commando gym logo" width={140} height={40} className="h-8 w-auto invert" priority />
+          <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-24 w-24 object-contain invert md:h-28 md:w-28" priority />
         </Link>
         <nav className="hidden gap-6 md:flex">
           {navItems.slice(0, -1).map((item) => (
@@ -41,33 +41,26 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-nav-menu" className="border-t border-border/70 bg-black/95 px-4 pb-4 pt-3 md:hidden">
-          <nav className="grid gap-2">
+        <div id="mobile-nav-menu" className="fixed inset-0 z-[100] bg-black px-4 pb-6 pt-20 md:hidden">
+          <nav className="grid gap-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="rounded-lg border border-border bg-surface px-3 py-2.5 text-sm font-medium text-zinc-100"
+                className="rounded-xl border border-border bg-surface px-4 py-4 text-lg font-medium text-zinc-100"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-            <Link href="/faq" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              FAQ
-            </Link>
-            <Link href="/terms" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Terms
-            </Link>
-            <Link href="/privacy" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Privacy
-            </Link>
-            <Link href="/media-policy" onClick={closeMobileMenu} className="rounded-md px-2 py-1.5 text-center text-zinc-300 underline">
-              Media Policy
-            </Link>
-          </div>
+          <button
+            type="button"
+            onClick={closeMobileMenu}
+            className="mt-4 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
+          >
+            Close Menu
+          </button>
         </div>
       )}
     </header>
