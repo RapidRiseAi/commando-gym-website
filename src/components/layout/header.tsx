@@ -4,13 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { navItems } from "@/content/site-content";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import commandoLogo from "../../../commando-logo.png";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const closeMobileMenu = () => setMobileOpen(false);
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-black/80 backdrop-blur">
@@ -41,33 +54,34 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div
-          id="mobile-nav-menu"
-          className="fixed inset-0 z-[100] bg-black/95 px-4 pb-6 pt-20 backdrop-blur-md md:hidden"
-        >
-          <div className="mx-auto flex h-full w-full max-w-lg flex-col rounded-2xl border border-white/10 bg-zinc-950/95 p-4 shadow-2xl">
-            <nav className="grid gap-3 overflow-y-auto pb-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className="rounded-xl border border-white/10 bg-black px-4 py-4 text-lg font-medium text-zinc-100"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <button
-              type="button"
-              onClick={closeMobileMenu}
-              className="mt-auto w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
-            >
-              Close Menu
-            </button>
+        <div id="mobile-nav-menu" className="fixed inset-0 z-[999] md:hidden" role="dialog" aria-modal="true">
+          <div className="absolute inset-0 bg-black" onClick={closeMobileMenu} />
+          <div className="relative z-10 flex h-full flex-col px-4 pb-6 pt-20">
+            <div className="mx-auto flex w-full max-w-lg flex-col rounded-2xl border border-white/10 bg-zinc-950 p-4 shadow-2xl">
+              <button
+                type="button"
+                onClick={closeMobileMenu}
+                className="mb-3 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
+              >
+                Close Menu
+              </button>
+              <nav className="grid max-h-[70vh] gap-3 overflow-y-auto">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className="rounded-xl border border-white/10 bg-black px-4 py-4 text-lg font-medium text-zinc-100"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
         </div>
       )}
+
     </header>
   );
 }
