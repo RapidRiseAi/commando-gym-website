@@ -58,8 +58,8 @@ export const mediaAssets = {
   },
   highlights: [
     {
-      src: benchPress,
-      alt: "Bench press area and equipment in the Commando gym",
+      src: weights,
+      alt: "Free weights setup at Commando gym",
       title: "Strength-focused equipment",
       body: "Train across key strength stations with equipment set up for consistent progress."
     },
@@ -70,8 +70,8 @@ export const mediaAssets = {
       body: "Train when your schedule allows, with a full floor of cardio and strength options."
     },
     {
-      src: smithMachine,
-      alt: "Smith machine and cable stations at Commando gym",
+      src: gymUpperFloor,
+      alt: "Massage and recovery area at Commando wellness studio",
       title: "Onsite recovery support",
       body: "Pair your training with massage and recovery-focused wellness services on-site."
     }
