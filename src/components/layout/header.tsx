@@ -41,26 +41,31 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-nav-menu" className="fixed inset-0 z-[100] bg-black px-4 pb-6 pt-20 md:hidden">
-          <nav className="grid gap-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMobileMenu}
-                className="rounded-xl border border-border bg-surface px-4 py-4 text-lg font-medium text-zinc-100"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <button
-            type="button"
-            onClick={closeMobileMenu}
-            className="mt-4 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
-          >
-            Close Menu
-          </button>
+        <div
+          id="mobile-nav-menu"
+          className="fixed inset-0 z-[100] bg-black/95 px-4 pb-6 pt-20 backdrop-blur-md md:hidden"
+        >
+          <div className="mx-auto flex h-full w-full max-w-lg flex-col rounded-2xl border border-white/10 bg-zinc-950/95 p-4 shadow-2xl">
+            <nav className="grid gap-3 overflow-y-auto pb-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="rounded-xl border border-white/10 bg-black px-4 py-4 text-lg font-medium text-zinc-100"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <button
+              type="button"
+              onClick={closeMobileMenu}
+              className="mt-auto w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-base font-semibold text-white"
+            >
+              Close Menu
+            </button>
+          </div>
         </div>
       )}
     </header>
