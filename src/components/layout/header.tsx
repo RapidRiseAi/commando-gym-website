@@ -26,7 +26,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-[1000] border-b border-border/70 bg-black/80 backdrop-blur">
+    <header className="sticky top-0 z-[1000] border-b border-border/70 bg-black/95">
       <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 md:px-6">
         <Link href="/" className="absolute left-4 inline-flex items-center md:left-6">
           <Image src={commandoLogo} alt="Commando gym logo" width={360} height={360} className="h-20 w-20 object-contain invert md:h-24 md:w-24" priority />
@@ -68,7 +68,7 @@ export function Header() {
             </button>
           </div>
 
-          <nav className="h-[calc(100vh-4rem)] overflow-y-auto px-4 pb-32 pt-4">
+          <nav className="h-[calc(100vh-4rem)] overflow-y-auto bg-black px-4 pb-32 pt-4">
             <div className="grid gap-3">
               {navItems.map((item) => (
                 <Link
