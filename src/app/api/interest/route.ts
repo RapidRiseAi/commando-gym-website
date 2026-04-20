@@ -20,10 +20,15 @@ export async function POST(request: Request) {
 
     const res = await fetch(webhookUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "X-Webhook-Secret": process.env.APPS_SCRIPT_WEBHOOK_SECRET ?? ""
+      },
       body: JSON.stringify({
         source: "product-selection-modal",
+        submission_type: parsed.data.option_type === "wellness" ? "wellness_booking" : "membership",
         submitted_at: new Date().toISOString(),
+        webhook_secret: process.env.APPS_SCRIPT_WEBHOOK_SECRET ?? "",
         ...parsed.data
       })
     });

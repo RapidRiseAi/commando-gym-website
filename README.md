@@ -24,9 +24,11 @@ npm run dev
 Create `.env.local`:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.commandogym.co.za
-# Optional integration targets for /api/join wiring:
-# JOIN_WEBHOOK_URL= # Google Apps Script or webhook endpoint for lead notifications
-# PRODUCT_WEBHOOK_URL= # Optional dedicated webhook for membership/wellness option modal requests
+# Google Apps Script / webhook routing
+# JOIN_WEBHOOK_URL= # Webhook URL for /api/join
+# CONTACT_WEBHOOK_URL= # Optional explicit webhook URL for /api/contact (falls back to JOIN_WEBHOOK_URL)
+# PRODUCT_WEBHOOK_URL= # Optional explicit webhook URL for /api/interest (falls back to JOIN_WEBHOOK_URL)
+# APPS_SCRIPT_WEBHOOK_SECRET= # Shared secret sent as X-Webhook-Secret header
 ```
 
 ## Commands
