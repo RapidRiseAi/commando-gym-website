@@ -15,8 +15,17 @@ export async function POST(request: Request) {
     if (webhookUrl) {
       const webhookResponse = await fetch(webhookUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...parsed.data, source: "contact_form" })
+        headers: {
+          "Content-Type": "application/json",
+          "X-Webhook-Secret": process.env.APPS_SCRIPT_WEBHOOK_SECRET ?? ""
+        },
+        body: JSON.stringify({
+          ...parsed.data,
+          source: "contact_form",
+          submission_type: "enquiry",
+          submitted_at: new Date().toISOString(),
+          webhook_secret: process.env.APPS_SCRIPT_WEBHOOK_SECRET ?? ""
+        })
       });
 
       if (!webhookResponse.ok) {
