@@ -19,9 +19,37 @@ function ReviewStars({ value }: { value: number }) {
   );
 }
 
+function ReviewCard({
+  authorName,
+  reviewerMeta,
+  rating,
+  relativePublishTimeDescription,
+  text
+}: {
+  authorName: string;
+  reviewerMeta?: string;
+  rating: number;
+  relativePublishTimeDescription: string;
+  text: string;
+}) {
+  return (
+    <article className="mobile-card flex h-full flex-col md:p-5">
+      <p className="text-sm font-bold text-zinc-100">{authorName}</p>
+      <p className="mt-1 text-xs text-zinc-400">{reviewerMeta ?? "Google review"}</p>
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <ReviewStars value={rating} />
+        <p className="text-xs text-zinc-400">{relativePublishTimeDescription}</p>
+      </div>
+      <p className="mt-3 text-sm text-zinc-200">{text}</p>
+    </article>
+  );
+}
+
 export function GoogleReviewsSection({ data }: { data: GoogleReviewsData | null }) {
   const hasLiveReviews = Boolean(data?.reviews?.length);
   const reviews = hasLiveReviews ? data?.reviews ?? [] : GOOGLE_REVIEWS_FALLBACK;
+  const firstThreeDesktopReviews = reviews.slice(0, 3);
+  const remainingDesktopReviews = reviews.slice(3);
 
   const businessProfileUrl = process.env.GOOGLE_BUSINESS_PROFILE_URL;
   const seeMoreReviewsUrl = data?.googleMapsUri || businessProfileUrl || FALLBACK_GOOGLE_URL;
@@ -33,19 +61,33 @@ export function GoogleReviewsSection({ data }: { data: GoogleReviewsData | null 
 
   return (
     <Section title="Google reviews" subtitle={subtitle}>
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="flex snap-x gap-4 overflow-x-auto pb-4 md:hidden">
         {reviews.map((review, index) => (
-          <article key={`${review.authorName}-${index}`} className="mobile-card flex h-full flex-col md:p-5">
-            <p className="text-sm font-bold text-zinc-100">{review.authorName}</p>
-            <p className="mt-1 text-xs text-zinc-400">{review.reviewerMeta ?? "Google review"}</p>
-            <div className="mt-3 flex items-center justify-between gap-3">
-              <ReviewStars value={review.rating} />
-              <p className="text-xs text-zinc-400">{review.relativePublishTimeDescription}</p>
-            </div>
-            <p className="mt-3 text-sm text-zinc-200">{review.text}</p>
-          </article>
+          <div key={`${review.authorName}-${index}`} className="min-w-[86%] snap-center">
+            <ReviewCard {...review} />
+          </div>
         ))}
       </div>
+
+      <div className="hidden gap-4 md:grid md:grid-cols-3">
+        {firstThreeDesktopReviews.map((review, index) => (
+          <ReviewCard key={`${review.authorName}-${index}`} {...review} />
+        ))}
+      </div>
+
+      {remainingDesktopReviews.length > 0 && (
+        <details className="mt-4 hidden md:block group">
+          <summary className="inline-flex cursor-pointer list-none items-center justify-center rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+            <span className="group-open:hidden">See more</span>
+            <span className="hidden group-open:inline">Show less</span>
+          </summary>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {remainingDesktopReviews.map((review, index) => (
+              <ReviewCard key={`${review.authorName}-more-${index}`} {...review} />
+            ))}
+          </div>
+        </details>
+      )}
 
       <div className="mt-6 flex flex-wrap gap-3">
         <Link
