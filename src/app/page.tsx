@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { buildMetadata } from "@/lib/seo";
+import { getGoogleReviewsData } from "@/lib/google-reviews";
 import { GymGallery } from "@/components/home/gym-gallery";
-import { businessFacts, faqGroups, homeContent, mediaAssets, testimonials } from "@/content/site-content";
+import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
+import { businessFacts, faqGroups, homeContent, mediaAssets } from "@/content/site-content";
 
 export const metadata = buildMetadata(
   "24/7 Gym + Fitness & Wellness Studio in Sabie",
@@ -12,14 +14,16 @@ export const metadata = buildMetadata(
   "/"
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googleReviewsData = await getGoogleReviewsData();
+
   const localBusinessLd = {
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
     name: "Commando",
     address: businessFacts.address,
     telephone: businessFacts.phone,
-    url: "https://www.commandogym.co.za",
+    url: "https://www.commandoonline.co.za",
     areaServed: "Sabie",
     priceRange: "R50-R850"
   };
@@ -103,17 +107,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Real member momentum" subtitle="Built around consistency, support, and local community progress.">
-        <div className="grid gap-4 md:grid-cols-3">
-          {testimonials.map((item) => (
-            <article key={item.quote} className="mobile-card md:p-5">
-              <p className="text-zinc-200">“{item.quote}”</p>
-              <p className="mt-4 text-sm font-semibold">{item.name}</p>
-              <p className="text-xs text-zinc-400">{item.context}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
+      <GoogleReviewsSection data={googleReviewsData} />
 
       <Section title="FAQ preview" subtitle="Quick answers to top concerns.">
         <div className="grid gap-3 md:grid-cols-2">

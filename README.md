@@ -23,13 +23,24 @@ npm run dev
 ## Environment variables
 Create `.env.local`:
 ```bash
-NEXT_PUBLIC_SITE_URL=https://www.commandogym.co.za
+NEXT_PUBLIC_SITE_URL=https://www.commandoonline.co.za
 # Google Apps Script / webhook routing
 # JOIN_WEBHOOK_URL= # Webhook URL for /api/join
 # CONTACT_WEBHOOK_URL= # Optional explicit webhook URL for /api/contact (falls back to JOIN_WEBHOOK_URL)
 # PRODUCT_WEBHOOK_URL= # Optional explicit webhook URL for /api/interest (falls back to JOIN_WEBHOOK_URL)
 # APPS_SCRIPT_WEBHOOK_SECRET= # Shared secret sent as X-Webhook-Secret header
 ```
+
+## Keep env variables after deploy (Cloudflare)
+- Keep stable, non-secret values in `wrangler.jsonc` under `vars` (for this repo: `NEXT_PUBLIC_SITE_URL` and `GOOGLE_BUSINESS_PROFILE_URL`).
+- Store secrets with Wrangler so they are not committed to git:
+```bash
+npx wrangler secret put JOIN_WEBHOOK_URL
+npx wrangler secret put GOOGLE_MAPS_API_KEY
+npx wrangler secret put GOOGLE_PLACE_ID
+npx wrangler secret put APPS_SCRIPT_WEBHOOK_SECRET
+```
+- Set each secret for both **Preview** and **Production** environments in Cloudflare.
 
 ## Commands
 ```bash
