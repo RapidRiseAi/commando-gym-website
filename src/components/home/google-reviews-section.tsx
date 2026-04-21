@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { GOOGLE_REVIEWS_FALLBACK } from "@/content/google-reviews-fallback";
-import { getGoogleReviewsData } from "@/lib/google-reviews";
+import { GoogleReviewsData } from "@/lib/google-reviews";
 
 const FALLBACK_GOOGLE_URL = "https://share.google/OnVMnLfG7aw2Ngj3z";
 
@@ -19,8 +19,7 @@ function ReviewStars({ value }: { value: number }) {
   );
 }
 
-export async function GoogleReviewsSection() {
-  const data = await getGoogleReviewsData();
+export function GoogleReviewsSection({ data }: { data: GoogleReviewsData | null }) {
   const hasLiveReviews = Boolean(data?.reviews?.length);
   const reviews = hasLiveReviews ? data?.reviews ?? [] : GOOGLE_REVIEWS_FALLBACK;
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { buildMetadata } from "@/lib/seo";
+import { getGoogleReviewsData } from "@/lib/google-reviews";
 import { GymGallery } from "@/components/home/gym-gallery";
 import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
 import { businessFacts, faqGroups, homeContent, mediaAssets } from "@/content/site-content";
@@ -13,7 +14,9 @@ export const metadata = buildMetadata(
   "/"
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googleReviewsData = await getGoogleReviewsData();
+
   const localBusinessLd = {
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
@@ -104,7 +107,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <GoogleReviewsSection />
+      <GoogleReviewsSection data={googleReviewsData} />
 
       <Section title="FAQ preview" subtitle="Quick answers to top concerns.">
         <div className="grid gap-3 md:grid-cols-2">
