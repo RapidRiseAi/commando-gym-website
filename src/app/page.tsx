@@ -23,7 +23,7 @@ export default async function HomePage() {
     name: "Commando",
     address: businessFacts.address,
     telephone: businessFacts.phone,
-    url: "https://www.commandogym.co.za",
+    url: "https://www.commandoonline.co.za",
     areaServed: "Sabie",
     priceRange: "R50-R850"
   };

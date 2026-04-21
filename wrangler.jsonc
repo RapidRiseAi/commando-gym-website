@@ -12,7 +12,7 @@
     "command": "npx @opennextjs/cloudflare build"
   },
   "vars": {
-    "NEXT_PUBLIC_SITE_URL": "https://www.commandogym.co.za",
+    "NEXT_PUBLIC_SITE_URL": "https://www.commandoonline.co.za",
     "GOOGLE_BUSINESS_PROFILE_URL": "https://share.google/OnVMnLfG7aw2Ngj3z"
   }
 }

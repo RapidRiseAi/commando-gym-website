@@ -23,7 +23,7 @@ npm run dev
 ## Environment variables
 Create `.env.local`:
 ```bash
-NEXT_PUBLIC_SITE_URL=https://www.commandogym.co.za
+NEXT_PUBLIC_SITE_URL=https://www.commandoonline.co.za
 # Google Apps Script / webhook routing
 # JOIN_WEBHOOK_URL= # Webhook URL for /api/join
 # CONTACT_WEBHOOK_URL= # Optional explicit webhook URL for /api/contact (falls back to JOIN_WEBHOOK_URL)
