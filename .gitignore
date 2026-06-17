@@ -5,3 +5,10 @@ dist/
 coverage/
 .env*
 !.env.example
+
+# npm lockfile is intentionally not committed (repo manages deps without one;
+# the Cloudflare build generates it fresh at install time).
+package-lock.json
+
+# Local screenshot output (scripts/screenshot.mjs writes to /tmp by default).
+/shots/
