@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/section";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { GOOGLE_REVIEWS_FALLBACK } from "@/content/google-reviews-fallback";
 import { GoogleReviewsData } from "@/lib/google-reviews";
 
@@ -9,9 +10,9 @@ function ReviewStars({ value }: { value: number }) {
   const clampedValue = Math.max(0, Math.min(5, Math.round(value)));
 
   return (
-    <div aria-label={`${clampedValue} out of 5 stars`} className="flex items-center gap-0.5 text-yellow-400">
+    <div aria-label={`${clampedValue} out of 5 stars`} className="flex items-center gap-0.5">
       {Array.from({ length: 5 }).map((_, index) => (
-        <span key={index} aria-hidden="true" className={index < clampedValue ? "opacity-100" : "opacity-40"}>
+        <span key={index} aria-hidden="true" className={index < clampedValue ? "text-white" : "text-zinc-700"}>
           ★
         </span>
       ))}
@@ -33,15 +34,15 @@ function ReviewCard({
   text: string;
 }) {
   return (
-    <article className="mobile-card flex h-full flex-col md:p-5">
+    <SpotlightCard as="article" className="flex h-full flex-col p-5">
       <p className="text-sm font-bold text-zinc-100">{authorName}</p>
       <p className="mt-1 text-xs text-zinc-400">{reviewerMeta ?? "Google review"}</p>
       <div className="mt-3 flex items-center justify-between gap-3">
         <ReviewStars value={rating} />
         <p className="text-xs text-zinc-400">{relativePublishTimeDescription}</p>
       </div>
-      <p className="mt-3 text-sm text-zinc-200">{text}</p>
-    </article>
+      <p className="mt-3 text-sm leading-6 text-zinc-200">{text}</p>
+    </SpotlightCard>
   );
 }
 
@@ -60,7 +61,7 @@ export function GoogleReviewsSection({ data }: { data: GoogleReviewsData | null 
     : "Real feedback from Google reviews shared by Commando members and visitors.";
 
   return (
-    <Section title="Google reviews" subtitle={subtitle}>
+    <Section eyebrow="Reviews" title="Google reviews" subtitle={subtitle}>
       <div className="flex snap-x gap-4 overflow-x-auto pb-4 md:hidden">
         {reviews.map((review, index) => (
           <div key={`${review.authorName}-${index}`} className="min-w-[86%] snap-center">

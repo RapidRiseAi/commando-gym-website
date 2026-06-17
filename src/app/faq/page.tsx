@@ -13,7 +13,7 @@ export default function FaqPage() {
   };
 
   return (
-    <Section title="Frequently Asked Questions" subtitle="Search common concerns and get quick clarity.">
+    <Section heading="h1" eyebrow="Help centre" title="Frequently Asked Questions" subtitle="Search common concerns and get quick clarity.">
       <FaqSearch />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
     </Section>

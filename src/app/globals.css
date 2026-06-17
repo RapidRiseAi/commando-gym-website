@@ -11,11 +11,23 @@ html {
 }
 
 body {
-  @apply bg-bg text-white antialiased;
+  @apply bg-bg font-sans text-white antialiased;
+  /* Monochrome ambient light: subtle white glows, no colour. */
   background-image:
-    radial-gradient(circle at 20% 0%, rgba(120, 119, 198, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.14), transparent 35%);
+    radial-gradient(60rem 30rem at 50% -8%, rgba(255, 255, 255, 0.07), transparent 60%),
+    radial-gradient(40rem 24rem at 90% 0%, rgba(255, 255, 255, 0.04), transparent 55%);
   background-attachment: fixed;
+}
+
+/* Display type: tighter tracking, balanced wrapping for headlines. */
+.font-display {
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 @layer components {
@@ -30,12 +42,120 @@ body {
   .mobile-copy {
     @apply text-sm leading-6 text-zinc-300 md:text-base md:leading-7;
   }
+
+  /* Eyebrow label with a short leading rule, used above section titles. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.28em] text-zinc-400;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gradient-to-r from-white/60 to-transparent;
+  }
+
+  /* Hairline divider with a centred highlight. */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  }
+
+  /* Interactive card: thin static border + white highlight that tracks the cursor. */
+  .spotlight-card {
+    @apply relative rounded-2xl border border-white/10 bg-surface;
+    --mx: 50%;
+    --my: 50%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .spotlight-card:hover {
+    @apply border-white/20 shadow-card;
+  }
+  .spotlight-card__border {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      220px circle at var(--mx) var(--my),
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0) 60%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .spotlight-card:hover .spotlight-card__border {
+    opacity: 1;
+  }
+
+  /* Button micro-interaction: subtle sheen sweep + press feedback. */
+  .btn {
+    @apply relative inline-flex min-h-11 select-none items-center justify-center overflow-hidden rounded-xl px-5 py-3 text-sm font-semibold transition;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.99);
+  }
+  .btn-primary {
+    @apply bg-white text-black hover:bg-zinc-200;
+  }
+  .btn-secondary {
+    @apply border border-border-strong bg-surface text-white hover:border-white/30 hover:bg-surface-2;
+  }
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35), transparent 70%);
+  }
+  .btn-sheen:hover::after {
+    animation: btn-shimmer 0.9s ease;
+  }
 }
 
+@keyframes btn-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
 
+/* Opacity-only so the wrapper never holds a persistent transform, which would
+   otherwise become a containing block and break position:fixed modals inside. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Larger base type on very wide screens. */
 @media (min-width: 1536px) {
   html {
     font-size: 18px;
+  }
+}
+
+/* Scroll-reveal: only hide content when JS is available AND motion is allowed.
+   No-JS and reduced-motion users see everything immediately. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .page-enter {
+    animation: page-enter 0.4s ease both;
   }
 }
 
@@ -44,7 +164,9 @@ body {
     scroll-behavior: auto;
   }
 
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
