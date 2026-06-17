@@ -82,3 +82,7 @@ npm run start    # run built app
 ## Notes
 - Business details and pricing in `src/content/site-content.ts` are configured for Commando in Sabie.
 - See `RESEARCH_NOTES.md` and `BUILD_SUMMARY.md` for implementation context.
+
+## Google reviews
+- Implementation plan: `docs-google-reviews-integration.md`
+- Uses a server-side proxy route in Next.js to safely fetch + cache Google review data.
