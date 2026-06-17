@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/section";
-import Image from "next/image";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { mediaAssets } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
@@ -7,25 +8,28 @@ export const metadata = buildMetadata("About", "Learn about Commando’s 24/7 tr
 
 export default function AboutPage() {
   return (
-    <Section title="About Commando" subtitle="A 24/7 gym and wellness space built for Sabie.">
+    <Section heading="h1" eyebrow="Our story" title="About Commando" subtitle="A 24/7 gym and wellness space built for Sabie.">
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-        <figure className="order-1 overflow-hidden rounded-2xl border border-border bg-surface lg:order-2">
-          <div className="relative h-72 w-full md:h-80 lg:h-full">
-            <Image src={mediaAssets.aboutBuilding.src} alt={mediaAssets.aboutBuilding.alt} fill className="object-cover" sizes="(min-width: 1024px) 40vw, 100vw" />
-          </div>
-          <figcaption className="border-t border-border px-4 py-3 text-sm text-zinc-300">
-            Commando Gym building in Sabie — your 24/7 training base and wellness support space.
+        <SpotlightCard as="figure" className="order-1 overflow-hidden lg:order-2">
+          <ResponsiveImage
+            name={mediaAssets.aboutBuilding.name}
+            alt={mediaAssets.aboutBuilding.alt}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="h-72 w-full object-cover md:h-80 lg:h-[26rem]"
+          />
+          <figcaption className="border-t border-white/10 px-4 py-3 text-sm text-zinc-300">
+            Commando Gym building in Sabie. Your 24/7 training base and wellness support space.
           </figcaption>
-        </figure>
+        </SpotlightCard>
 
-        <div className="mobile-card order-2 space-y-4 lg:order-1">
+        <div className="order-2 space-y-4 text-zinc-300 lg:order-1">
           <p>
             Commando was built for people who refuse to quit on themselves. Whether you are taking your first step into fitness or returning
             after a long break, our mission is to give you a space where progress feels possible every single day.
           </p>
           <p>
             We are open 24/7 with secure access so your training can match your life, not the other way around. Early mornings, late nights,
-            or in-between shifts — your routine has a home here.
+            or in-between shifts, your routine has a home here.
           </p>
           <p>
             Our community is family-friendly, welcoming, and focused on growth. You will find people at different stages of their journey,
@@ -35,8 +39,8 @@ export default function AboutPage() {
             Beyond training, our Onsite Wellness Studio provides recovery and self-care support to help you stay consistent over time. From
             massage and treatment options to intentional recovery, we believe real results come from balancing effort with restoration.
           </p>
-          <p className="text-sm font-semibold text-foreground md:text-base">
-            At Commando, we do not just build workouts — we build confidence, commitment, and a lifestyle you can sustain.
+          <p className="font-display text-base font-semibold text-white md:text-lg">
+            At Commando, we do not just build workouts. We build confidence, commitment, and a lifestyle you can sustain.
           </p>
         </div>
       </div>

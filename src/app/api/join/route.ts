@@ -38,7 +38,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "Thanks — your request has been received. We'll contact you within 24 hours.",
+      message: "Thanks, your request has been received. We'll contact you within 24 hours.",
       data: parsed.data
     });
   } catch {

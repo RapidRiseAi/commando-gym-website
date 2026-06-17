@@ -9,31 +9,30 @@ type Props = {
   variant?: "primary" | "secondary";
   type?: "button" | "submit";
   onClick?: () => void;
+  /** External target/rel for off-site links. */
+  external?: boolean;
 };
 
-const styles = {
-  primary: "bg-white text-black hover:bg-zinc-200",
-  secondary: "border border-border bg-surface text-white hover:bg-zinc-900"
+const variants = {
+  primary: "btn-primary btn-sheen",
+  secondary: "btn-secondary"
 };
 
-export function Button({ href, children, className, variant = "primary", type = "button", onClick }: Props) {
-  const base = cn(
-    "inline-flex min-h-10 items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 md:min-h-11 md:px-5 md:py-3",
-    styles[variant],
-    className
-  );
+export function Button({ href, children, className, variant = "primary", type = "button", onClick, external }: Props) {
+  const classes = cn("btn", variants[variant], className);
 
   if (href) {
+    const externalProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
     return (
-      <Link href={href} className={base}>
-        {children}
+      <Link href={href} className={classes} {...externalProps}>
+        <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
       </Link>
     );
   }
 
   return (
-    <button type={type} className={base} onClick={onClick}>
-      {children}
+    <button type={type} className={classes} onClick={onClick}>
+      <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
     </button>
   );
 }

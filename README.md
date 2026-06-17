@@ -70,7 +70,15 @@ npm run start    # run built app
   - Deploy scripts and Wrangler custom build both use the same OpenNext build command, so `.open-next/worker.js` is generated before upload.
 - For Cloudflare/OpenNext builds, keep `autoprefixer` + `postcss` installed in `devDependencies` because `src/app/globals.css` is compiled through PostCSS during `next build`.
 
+## Images
+- Source images live in `media-src/` (committed as the source of truth, not shipped to the browser).
+- `npm run optimize:images` reads `media-src/`, writes responsive WebP variants to `public/img/`, and regenerates `src/content/image-manifest.json` (intrinsic dimensions + blur placeholders). Run it whenever a source image changes.
+- Pages use the `ResponsiveImage` component (`src/components/ui/responsive-image.tsx`), which renders pre-optimized WebP with `srcset`/`sizes` and explicit `width`/`height`. The hero is preloaded with `fetchpriority="high"`.
+- Why pre-optimize instead of `next/image`: on Cloudflare/OpenNext the runtime image optimizer returns originals unchanged unless a Cloudflare `images` binding is configured, so `images.unoptimized` is set in `next.config.ts` and optimization is done at build time.
+
+## Security
+- Security headers (CSP, HSTS, X-Frame-Options, etc.) are set in `next.config.ts` and mirrored in `public/_headers`. See `SECURITY.md` for the full posture and the backend items (rate limiting, Turnstile, webhook hardening) that need owner action.
+
 ## Notes
 - Business details and pricing in `src/content/site-content.ts` are configured for Commando in Sabie.
-- Motivational visuals are configured via remote image URLs in content/code so PRs do not require binary image files.
 - See `RESEARCH_NOTES.md` and `BUILD_SUMMARY.md` for implementation context.
