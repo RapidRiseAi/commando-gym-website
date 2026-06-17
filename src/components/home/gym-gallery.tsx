@@ -1,10 +1,12 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
+import { Reveal } from "@/components/ui/reveal";
+import manifest from "@/content/image-manifest.json";
+import type { ImageName } from "@/components/ui/responsive-image";
 
 type GalleryImage = {
-  src: string | StaticImageData;
+  name: ImageName;
   alt: string;
 };
 
@@ -12,7 +14,19 @@ type GymGalleryProps = {
   images: GalleryImage[];
 };
 
-export function GymGallery({ images }: GymGalleryProps) {
+const images = manifest as Record<string, { widths: number[]; intrinsicWidth: number; intrinsicHeight: number }>;
+
+function srcSetFor(name: string) {
+  const entry = images[name];
+  return {
+    srcSet: entry.widths.map((w) => `/img/${name}-${w}.webp ${w}w`).join(", "),
+    fallback: `/img/${name}-${entry.widths[entry.widths.length - 1]}.webp`,
+    width: entry.intrinsicWidth,
+    height: entry.intrinsicHeight
+  };
+}
+
+export function GymGallery({ images: galleryImages }: GymGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
@@ -21,42 +35,63 @@ export function GymGallery({ images }: GymGalleryProps) {
       document.body.style.overflow = "";
       return;
     }
-
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
   }, [activeIndex]);
 
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveIndex(null);
+      if (e.key === "ArrowRight") setActiveIndex((i) => (i === null ? i : (i + 1) % galleryImages.length));
+      if (e.key === "ArrowLeft") setActiveIndex((i) => (i === null ? i : (i - 1 + galleryImages.length) % galleryImages.length));
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeIndex, galleryImages.length]);
+
   const showPrev = () => {
     if (activeIndex === null) return;
-    setActiveIndex((activeIndex - 1 + images.length) % images.length);
+    setActiveIndex((activeIndex - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const showNext = () => {
     if (activeIndex === null) return;
-    setActiveIndex((activeIndex + 1) % images.length);
+    setActiveIndex((activeIndex + 1) % galleryImages.length);
   };
 
   return (
     <>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-        {images.map((image, index) => (
-          <button
-            key={`${image.alt}-${index}`}
-            type="button"
-            className="overflow-hidden rounded-2xl border border-border bg-surface"
-            onClick={() => setActiveIndex(index)}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={900}
-              height={900}
-              className="aspect-square w-full object-cover md:aspect-auto md:h-40"
-            />
-          </button>
-        ))}
+        {galleryImages.map((image, index) => {
+          const meta = srcSetFor(image.name);
+          return (
+            <Reveal key={`${image.name}-${index}`} delay={(index % 4) * 70}>
+              <button
+                type="button"
+                className="spotlight-card group block w-full overflow-hidden rounded-2xl"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Open image: ${image.alt}`}
+              >
+                <span aria-hidden className="spotlight-card__border" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={meta.fallback}
+                  srcSet={meta.srcSet}
+                  sizes="(min-width: 768px) 22vw, 45vw"
+                  width={meta.width}
+                  height={meta.height}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105 md:aspect-auto md:h-40"
+                />
+              </button>
+            </Reveal>
+          );
+        })}
       </div>
 
       {activeIndex !== null && (
@@ -90,14 +125,22 @@ export function GymGallery({ images }: GymGalleryProps) {
             ←
           </button>
 
-          <Image
-            src={images[activeIndex].src}
-            alt={images[activeIndex].alt}
-            width={1600}
-            height={1200}
-            className="max-h-[90vh] w-full max-w-5xl rounded-xl object-contain"
-            priority
-          />
+          {(() => {
+            const meta = srcSetFor(galleryImages[activeIndex].name);
+            return (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={meta.fallback}
+                srcSet={meta.srcSet}
+                sizes="90vw"
+                width={meta.width}
+                height={meta.height}
+                alt={galleryImages[activeIndex].alt}
+                decoding="async"
+                className="max-h-[90vh] w-full max-w-5xl rounded-xl object-contain"
+              />
+            );
+          })()}
 
           <button
             type="button"

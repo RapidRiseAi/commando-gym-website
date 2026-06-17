@@ -1,0 +1,157 @@
+{
+  "commando-exterior": {
+    "width": 901,
+    "height": 902,
+    "intrinsicWidth": 901,
+    "intrinsicHeight": 902,
+    "widths": [
+      640,
+      901
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJagCdH8AFX+B+UYXAAD9tCUSKJKv73uwctLysug3YsnvNG4KGqQPqsVif/gPTtNZEN6kaw3h03vyUH+oRw/PkdYuyWyCmcdJ9x/kSRYkzYAEqpEAohh+o43JQxhqPe8iqfxMAAA="
+  },
+  "weights": {
+    "width": 1224,
+    "height": 1224,
+    "intrinsicWidth": 1224,
+    "intrinsicHeight": 1224,
+    "widths": [
+      400,
+      800,
+      1224
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQABAAA4BaJQBdj+ACUnEurHHQAP70tr2kEl3StctBLlyA9TskMVjGt3PlZoyVGRabfd2TQFN4ymVhjLfLCDlgF1S5UoUxh16xqCLwg7yLR8AA"
+  },
+  "cycling-bike": {
+    "width": 859,
+    "height": 860,
+    "intrinsicWidth": 859,
+    "intrinsicHeight": 860,
+    "widths": [
+      400,
+      800,
+      859
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoQABAAA4BaJQBdgO4Fv10NzAujK0OQAP7kSOet4Cj9Fd9/ig2oZY5tLWQthG1EowCo5DUNPorqju99f2bw1jpYwchLQ8Um26fJ5VWZp0WGubOUsQRIGRqdMcMRv6iWnNq5gzLW756owD2AAAA="
+  },
+  "bench-press": {
+    "width": 912,
+    "height": 912,
+    "intrinsicWidth": 912,
+    "intrinsicHeight": 912,
+    "widths": [
+      400,
+      800,
+      912
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQABAAA4BaJYgAD5MuLz8MtxPL0AD9k03Qa8jaAOGltXcDcdSHJ0TJlq/AotGmRulSG8S+4jTFgfoeeIieJ6DrOWHRvTKGuVkz8r9eBa7nOv3XNtshhysk+J/1pAsZUwAAAA=="
+  },
+  "chest-press": {
+    "width": 1224,
+    "height": 1224,
+    "intrinsicWidth": 1224,
+    "intrinsicHeight": 1224,
+    "widths": [
+      400,
+      800,
+      1224
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQAgCdASoQABAAA4BaJQBdgMXDtZ4htvXyAPv8+IASfJeLX5OGvJT840h+SsES9PI2qnK/uHinmII46fkOTDbWadQ54X3AQ0ftyDvjKfm4fEvf+oC3ue1c1mGHWa9wFMo4YrZSA4w3FceXe0hmetOF6y/bAqZP5OHwAAAA"
+  },
+  "gym-upper-floor": {
+    "width": 870,
+    "height": 870,
+    "intrinsicWidth": 870,
+    "intrinsicHeight": 870,
+    "widths": [
+      400,
+      800,
+      870
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJYwC7AYsjqiBOm35gAD+SMPprOzfFQyOVUe7tfM6YK3AXgOtefSG3B+/Ds3WcvbPtwx/QuqrIM6M4JpbnsrB/J/z4nttJ1u8rRA4HSfGpkNvltDYDT5zm0XbCNfk5uiqEhz+AAA="
+  },
+  "legpress": {
+    "width": 1224,
+    "height": 1224,
+    "intrinsicWidth": 1224,
+    "intrinsicHeight": 1224,
+    "widths": [
+      400,
+      800,
+      1224
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQABAAA4BaJZwAD4zPui0bpcDgAADOK34cpsEwTvBVvdhyGvs5/LYuP2iJIjHM5q3Of7exqfl7naObxl5kNAkkcP//tnJl1Y3Z7SPYtd1duS0+dHv2qY6frlcc4BH2QyOPHR2lCAA="
+  },
+  "smith-machine": {
+    "width": 1224,
+    "height": 1224,
+    "intrinsicWidth": 1224,
+    "intrinsicHeight": 1224,
+    "widths": [
+      400,
+      800,
+      1224
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQABAAA4BaJYwCw7EfpwMdUalOUAD+zFmd81XTIpxdRoeV1bQdsYs4U1hJGWlRVjIsIwUDCRj3OZomT797sQ+221r4wpoMjtept08OYiBeCDEE0lwAAA=="
+  },
+  "recovery": {
+    "width": 1600,
+    "height": 1067,
+    "intrinsicWidth": 1600,
+    "intrinsicHeight": 1067,
+    "widths": [
+      480,
+      960,
+      1280,
+      1600
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAsAA4BaJbACdAEejaOcuvtAAPhFm0B/GmMwMgHevyaQijY3ha1nbX23mxcBf9+xVDlW5ghb7RItUBwfyh4pAG8IkFzWZSHrHRahUCBB6KlbHc3hgGaVg1UAAA=="
+  },
+  "memberships": {
+    "width": 1600,
+    "height": 1067,
+    "intrinsicWidth": 1600,
+    "intrinsicHeight": 1067,
+    "widths": [
+      768,
+      1280,
+      1600
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoQAAsAA4BaJZwAD5GvSlmbvDgcAAD+7y1vfrh84Cn31KQ9LqSIsXvq2Jk4xbpzxsZDVW6evY7o5ZmIqptOcJbsW/IzCWTPOu4gVOzUgJBLlFBq6X0GYE/kNwAAAA=="
+  },
+  "wellness": {
+    "width": 1600,
+    "height": 1067,
+    "intrinsicWidth": 1600,
+    "intrinsicHeight": 1067,
+    "widths": [
+      768,
+      1280,
+      1600
+    ],
+    "alpha": false,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoQAAsAA4BaJQBOgBZLOIbzMAD92W8wE85zClUCNqnlp1DBMLpab9GwzsFoHPCjCrgbdvJNqfnCRl1oxopZ5Bsg0wXlTj8AAAA="
+  },
+  "commando-logo": {
+    "width": 384,
+    "height": 384,
+    "intrinsicWidth": 1600,
+    "intrinsicHeight": 1600,
+    "widths": [
+      192,
+      384
+    ],
+    "alpha": true,
+    "blurDataURL": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSIkAAAABgF3btupk7xO3Ftw9acDLyKe74u7u7nxBAQwa8TICPThUEBETgH9Ikt8SQvBdIbRQ6z4jgOjLysWzDyoRUVDBYP/eMZuC4KNJcPNuzhWqncFKttdoXk/Fbvv2iYnRzbWx7aP59dn9ePjtzj2fAQGAFCL2unj+4IaCnwuhg1qHbwoh+D5Jfu+vAQBWUDggGAAAADABAJ0BKhAAEAADgFolpAADcAD+9eDAAA=="
+  }
+}

@@ -1,12 +1,4 @@
-import benchPress from "../../bench-press.jpg";
-import chestPress from "../../chest-press.jpg";
-import commandoExterior from "../../commando-exterior.jpg";
-import cyclingBike from "../../cycling-bike.jpg";
-import gymUpperFloor from "../../gym-upper-floor.jpg";
-import legPress from "../../legpress.jpg";
-import smithMachine from "../../smith-machine.jpg";
-import weights from "../../weights.jpg";
-import commandoLogo from "../../commando-logo.png";
+import type { ImageName } from "@/components/ui/responsive-image";
 
 export const navItems = [
   { href: "/", label: "Home" },
@@ -47,55 +39,57 @@ export const homeContent = {
   }
 };
 
+type GalleryImage = { name: ImageName; alt: string };
+
 export const mediaAssets = {
   hero: {
-    src: commandoExterior,
+    name: "commando-exterior" as ImageName,
     alt: "Exterior of Commando gym in Sabie"
   },
   aboutBuilding: {
-    src: commandoExterior,
+    name: "commando-exterior" as ImageName,
     alt: "Exterior of Commando gym in Sabie"
   },
   highlights: [
     {
-      src: weights,
+      name: "weights" as ImageName,
       alt: "Free weights setup at Commando gym",
       title: "Strength-focused equipment",
       body: "Train across key strength stations with equipment set up for consistent progress."
     },
     {
-      src: cyclingBike,
+      name: "cycling-bike" as ImageName,
       alt: "Cycling and cardio zone at Commando gym",
       title: "24/7 training access",
       body: "Train when your schedule allows, with a full floor of cardio and strength options."
     },
     {
-      src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=80",
+      name: "recovery" as ImageName,
       alt: "Massage treatment setup for recovery services",
       title: "Onsite recovery support",
       body: "Pair your training with massage and recovery-focused wellness services on-site."
     }
   ],
   memberships: {
-    src: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1400&q=80",
+    name: "memberships" as ImageName,
     alt: "Athlete resting between intense sets with gym equipment in background"
   },
   wellness: {
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
+    name: "wellness" as ImageName,
     alt: "Massage therapy setup with towels and oils"
   },
   gallery: [
-    { src: benchPress, alt: "Bench press station at Commando gym" },
-    { src: weights, alt: "Free weights section at Commando gym" },
-    { src: gymUpperFloor, alt: "Upper floor gym view at Commando" },
-    { src: chestPress, alt: "Chest press machine at Commando gym" },
-    { src: cyclingBike, alt: "Cycling equipment at Commando gym" },
-    { src: legPress, alt: "Leg press machine at Commando gym" },
-    { src: commandoExterior, alt: "Commando gym exterior in Sabie" },
-    { src: smithMachine, alt: "Smith machine area at Commando gym" }
-  ],
+    { name: "bench-press", alt: "Bench press station at Commando gym" },
+    { name: "weights", alt: "Free weights section at Commando gym" },
+    { name: "gym-upper-floor", alt: "Upper floor gym view at Commando" },
+    { name: "chest-press", alt: "Chest press machine at Commando gym" },
+    { name: "cycling-bike", alt: "Cycling equipment at Commando gym" },
+    { name: "legpress", alt: "Leg press machine at Commando gym" },
+    { name: "commando-exterior", alt: "Commando gym exterior in Sabie" },
+    { name: "smith-machine", alt: "Smith machine area at Commando gym" }
+  ] as GalleryImage[],
   logo: {
-    src: commandoLogo,
+    name: "commando-logo" as ImageName,
     alt: "Commando gym logo"
   }
 };
@@ -160,7 +154,7 @@ export const wellnessStudio = {
   title: "Onsite Wellness Studio",
   intro:
     "Our Onsite Wellness Studio offers appointment-only wellness and recovery services for members and non-members.",
-  hours: "08:00–16:00 (appointment only)",
+  hours: "08:00 to 16:00 (appointment only)",
   memberBenefit: "Gym members receive 20% discount on health treatments.",
   bookingLine: "Book via WhatsApp: +27 60 971 0050",
   categories: [
