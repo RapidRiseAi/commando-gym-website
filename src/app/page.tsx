@@ -8,6 +8,8 @@ import { buildMetadata } from "@/lib/seo";
 import { getGoogleReviewsData } from "@/lib/google-reviews";
 import { GymGallery } from "@/components/home/gym-gallery";
 import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
+import { RelocationSection } from "@/components/home/relocation-section";
+import { relocation } from "@/content/relocation";
 import { businessFacts, faqGroups, homeContent, mediaAssets } from "@/content/site-content";
 
 export const metadata = buildMetadata(
@@ -123,6 +125,8 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <RelocationSection />
+
       <Section eyebrow="Why Commando" title={homeContent.motivation.title} subtitle={homeContent.motivation.body}>
         <div className="grid gap-5 md:grid-cols-3">
           {mediaAssets.highlights.map((item, index) => (
@@ -181,13 +185,20 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Location" title="Find us in Sabie" subtitle={`Visit us at ${businessFacts.address}.`}>
-        <SpotlightCard className="flex flex-col gap-4 p-5 md:flex-row md:items-center md:justify-between md:p-6">
-          <p className="mobile-copy text-zinc-200">{businessFacts.address}</p>
-          <Button href={businessFacts.mapLink} external>
-            Get directions
-          </Button>
-        </SpotlightCard>
+      <Section eyebrow="Location" title="Find us in Sabie" subtitle="Train at our current home until the move, then join us for the next chapter.">
+        <div className="grid gap-5 md:grid-cols-2">
+          <SpotlightCard className="flex flex-col p-5 md:p-6">
+            <p className="eyebrow">Current location</p>
+            <h3 className="mt-3 font-display text-xl font-bold">Training here until {relocation.currentUntil}</h3>
+            <p className="mobile-copy mt-2 text-zinc-200">{relocation.currentAddress}</p>
+            <div className="mt-5 md:mt-auto md:pt-6"><Button href={businessFacts.mapLink} external>Get directions</Button></div>
+          </SpotlightCard>
+          <SpotlightCard className="p-5 md:p-6">
+            <p className="eyebrow">Our new home</p>
+            <h3 className="mt-3 font-display text-xl font-bold">Opening {relocation.reopeningShort}</h3>
+            <p className="mobile-copy mt-2 text-zinc-200">{relocation.newAddress}<br />{relocation.newLandmark}</p>
+          </SpotlightCard>
+        </div>
       </Section>
 
       <GoogleReviewsSection data={googleReviewsData} />
