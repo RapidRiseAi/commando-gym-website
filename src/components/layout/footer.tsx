@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { businessFacts } from "@/content/site-content";
-import { relocation } from "@/content/relocation";
 
 const legalLinks = [
   { href: "/faq", label: "FAQ" },
@@ -34,7 +33,6 @@ export function Footer() {
           <div className="grid gap-2 text-sm text-zinc-400">
             <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Visit</p>
             <p>{businessFacts.address}</p>
-            <p className="text-xs text-zinc-500">Moving to {relocation.newAddress} on {relocation.reopeningShort}</p>
             <p>WhatsApp: {businessFacts.whatsapp}</p>
             <p>{businessFacts.hours}</p>
           </div>

@@ -11,12 +11,7 @@ export function FaqSearch() {
     if (!query) return faqGroups;
     const lower = query.toLowerCase();
     return faqGroups
-      .map((group) => ({
-        ...group,
-        items: group.items.filter((item) =>
-          `${item.q} ${item.a} ${"keywords" in item ? item.keywords : ""}`.toLowerCase().includes(lower)
-        )
-      }))
+      .map((group) => ({ ...group, items: group.items.filter((item) => item.q.toLowerCase().includes(lower) || item.a.toLowerCase().includes(lower)) }))
       .filter((group) => group.items.length > 0);
   }, [query]);
 

@@ -5,7 +5,6 @@ import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { mediaAssets, memberships } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 import { ProductInterestModal } from "@/components/forms/product-interest-modal";
-import { relocation } from "@/content/relocation";
 
 export const metadata = buildMetadata("Memberships & Pricing", "Daily, weekly, monthly, couples, and student gym pricing in Sabie.", "/memberships");
 
@@ -25,15 +24,6 @@ export default function MembershipsPage() {
           className="h-52 w-full object-cover md:h-64"
         />
       </div>
-
-      <aside className="mb-8 border-y border-white/15 bg-gradient-to-r from-white/[0.07] to-transparent px-5 py-6 md:px-7" aria-label="Relocation access notice">
-        <p className="eyebrow">A quick heads-up before the next chapter</p>
-        <p className="mt-3 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
-          Commando will be closed on <strong className="text-white">{relocation.moveDates}</strong> while we move into our new home.<br />
-          <strong className="text-white">24/7 gym access resumes {relocation.reopeningDate}</strong> at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
-        </p>
-        <p className="mt-3 font-display font-semibold">Same training. New home. The next chapter starts soon.</p>
-      </aside>
 
       <div className="md:hidden">
         <div className="flex snap-x gap-4 overflow-x-auto pb-4">
