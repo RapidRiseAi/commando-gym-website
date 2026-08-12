@@ -15,13 +15,16 @@ export default function ContactPage() {
     <Section heading="h1" eyebrow="Get in touch" title="Contact Commando" subtitle="Reach us directly on WhatsApp for memberships and wellness bookings.">
       <div className="grid gap-6 md:grid-cols-2">
         <SpotlightCard className="space-y-3 p-5 text-zinc-300 md:p-6">
-          <div className="mb-5 border-b border-white/10 pb-5">
-            <p className="eyebrow">Current location</p>
+          <div className="mb-5 rounded-xl border border-white/10 bg-surface-2 p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="eyebrow">Current location</p>
+              <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zinc-200">Open now</span>
+            </div>
             <h2 className="mt-2 font-display text-xl font-bold text-white">Until {relocation.currentUntil}</h2>
             <p className="mt-1">{relocation.currentAddress}</p>
             <div className="mt-4"><Button href={businessFacts.mapLink} variant="secondary" external>Get directions</Button></div>
           </div>
-          <div className="mb-5 border-b border-white/10 pb-5">
+          <div className="mb-5 rounded-xl border border-white/10 bg-surface p-4">
             <p className="eyebrow">New location</p>
             <h2 className="mt-2 font-display text-xl font-bold text-white">Opening {relocation.reopeningDate}</h2>
             <p className="mt-1">{relocation.newAddress}<br />{relocation.newLandmark}</p>
