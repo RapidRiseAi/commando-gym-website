@@ -15,15 +15,15 @@ export default function ContactPage() {
     <Section heading="h1" eyebrow="Get in touch" title="Contact Commando" subtitle="Reach us directly on WhatsApp for memberships and wellness bookings.">
       <div className="grid gap-6 md:grid-cols-2">
         <SpotlightCard className="space-y-3 p-5 text-zinc-300 md:p-6">
-          <div className="mb-5 rounded-xl border border-white/10 bg-white/[0.025] p-4">
-            <div className="flex items-center justify-between gap-3"><p className="eyebrow">Current location</p><span className="rounded-full bg-white px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-black">Open now</span></div>
-            <h2 className="mt-3 font-display text-xl font-bold text-white">Until {relocation.currentUntil}</h2>
+          <div className="mb-5 border-b border-white/10 pb-5">
+            <p className="eyebrow">Current location</p>
+            <h2 className="mt-2 font-display text-xl font-bold text-white">Until {relocation.currentUntil}</h2>
             <p className="mt-1">{relocation.currentAddress}</p>
             <div className="mt-4"><Button href={businessFacts.mapLink} variant="secondary" external>Get directions</Button></div>
           </div>
-          <div className="mb-5 rounded-xl border border-white/10 bg-black/20 p-4">
+          <div className="mb-5 border-b border-white/10 pb-5">
             <p className="eyebrow">New location</p>
-            <h2 className="mt-3 font-display text-xl font-bold text-white">Opening {relocation.reopeningDate}</h2>
+            <h2 className="mt-2 font-display text-xl font-bold text-white">Opening {relocation.reopeningDate}</h2>
             <p className="mt-1">{relocation.newAddress}<br />{relocation.newLandmark}</p>
             <p className="mt-3 text-sm font-semibold text-white">We’re moving forward. Come experience the next chapter of Commando from 27 August.</p>
           </div>

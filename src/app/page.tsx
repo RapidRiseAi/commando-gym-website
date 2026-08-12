@@ -186,22 +186,17 @@ export default async function HomePage() {
       </Section>
 
       <Section eyebrow="Location" title="Find us in Sabie" subtitle="Train at our current home until the move, then join us for the next chapter.">
-        <div className="grid gap-4 md:grid-cols-2">
-          <SpotlightCard className="flex flex-col overflow-hidden p-5 md:p-7">
-            <div className="flex items-center justify-between gap-3">
-              <p className="eyebrow">Current location</p>
-              <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-zinc-300">Open now</span>
-            </div>
-            <h3 className="mt-5 font-display text-2xl font-bold">Training here until {relocation.currentUntil}</h3>
-            <p className="mobile-copy mt-2 text-zinc-300">{relocation.currentAddress}</p>
-            <div className="mt-6 md:mt-auto md:pt-8"><Button href={businessFacts.mapLink} external>Get directions</Button></div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <SpotlightCard className="flex flex-col p-5 md:p-6">
+            <p className="eyebrow">Current location</p>
+            <h3 className="mt-3 font-display text-xl font-bold">Training here until {relocation.currentUntil}</h3>
+            <p className="mobile-copy mt-2 text-zinc-200">{relocation.currentAddress}</p>
+            <div className="mt-5 md:mt-auto md:pt-6"><Button href={businessFacts.mapLink} external>Get directions</Button></div>
           </SpotlightCard>
-          <SpotlightCard className="relative overflow-hidden p-5 md:p-7">
-            <div aria-hidden className="absolute -right-6 -top-10 font-display text-8xl font-bold text-white/[0.025]">27</div>
+          <SpotlightCard className="p-5 md:p-6">
             <p className="eyebrow">Our new home</p>
-            <h3 className="mt-5 font-display text-2xl font-bold">Opening {relocation.reopeningShort}</h3>
-            <p className="mobile-copy mt-2 text-zinc-300">{relocation.newAddress}<br />{relocation.newLandmark}</p>
-            <p className="mt-6 border-t border-white/10 pt-4 text-xs leading-5 text-zinc-500">Directions will be added once the new location link is verified.</p>
+            <h3 className="mt-3 font-display text-xl font-bold">Opening {relocation.reopeningShort}</h3>
+            <p className="mobile-copy mt-2 text-zinc-200">{relocation.newAddress}<br />{relocation.newLandmark}</p>
           </SpotlightCard>
         </div>
       </Section>

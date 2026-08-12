@@ -26,23 +26,13 @@ export default function MembershipsPage() {
         />
       </div>
 
-      <aside className="relative mb-8 overflow-hidden rounded-2xl border border-white/10 bg-surface-2 p-5 shadow-card md:p-7" aria-label="Relocation access notice">
-        <div aria-hidden className="absolute -right-5 -top-10 font-display text-9xl font-bold text-white/[0.025]">27</div>
-        <div className="relative grid gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-center">
-          <div>
-            <p className="eyebrow">Before the next chapter</p>
-            <h2 className="mt-3 font-display text-2xl font-bold leading-tight">A quick heads-up</h2>
-            <p className="mt-2 font-display text-sm font-semibold text-zinc-400">Same training. New home.</p>
-          </div>
-          <div className="border-t border-white/10 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-            <p className="text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
-              Commando will be closed on <strong className="text-white">{relocation.moveDates}</strong> while we move into our new home.
-            </p>
-            <p className="mt-2 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
-              <strong className="text-white">24/7 gym access resumes {relocation.reopeningDate}</strong> at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
-            </p>
-          </div>
-        </div>
+      <aside className="mb-8 border-y border-white/15 bg-gradient-to-r from-white/[0.07] to-transparent px-5 py-6 md:px-7" aria-label="Relocation access notice">
+        <p className="eyebrow">A quick heads-up before the next chapter</p>
+        <p className="mt-3 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
+          Commando will be closed on <strong className="text-white">{relocation.moveDates}</strong> while we move into our new home.<br />
+          <strong className="text-white">24/7 gym access resumes {relocation.reopeningDate}</strong> at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
+        </p>
+        <p className="mt-3 font-display font-semibold">Same training. New home. The next chapter starts soon.</p>
       </aside>
 
       <div className="md:hidden">
