@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
 import { PageTransition } from "@/components/layout/page-transition";
 import { siteConfig } from "@/lib/config";
+import { RelocationBanner } from "@/components/layout/relocation-banner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <RelocationBanner />
         <Header />
         <main id="main">
           <PageTransition>{children}</PageTransition>

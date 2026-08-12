@@ -235,6 +235,13 @@ export const ruleGroups = [
 
 export const faqGroups = [
   {
+    title: "Moving to our new home",
+    items: [
+      { q: "Is Commando moving?", a: "Yes. Commando is moving to 190 Main Street, Erf 153, directly across from Hlatini. Our new location opens on Thursday, 27 August.", keywords: "address move August location" },
+      { q: "Will Commando be closed during the move?", a: "Yes. The gym will be closed on 25 & 26 August while we relocate and prepare the new premises. Training resumes on Thursday, 27 August.", keywords: "moving closed August address location" }
+    ]
+  },
+  {
     title: "New member onboarding",
     items: [
       { q: "I’m a beginner, is this for me?", a: "Yes. Beginners are supported from day one with practical guidance and no judgment." },
@@ -267,7 +274,7 @@ export const faqGroups = [
     title: "Scheduling and access",
     items: [
       { q: "How do I sign up?", a: "Use the Join Now form or message us on WhatsApp at +27 60 971 0050." },
-      { q: "Are you open 24/7?", a: "Yes. Commando gym access is available 24/7." }
+      { q: "Are you open 24/7?", a: "Yes. Commando normally offers 24/7 gym access. Please note that the gym will be temporarily closed on 25 & 26 August for our relocation. 24/7 access resumes at our new home on Thursday, 27 August." }
     ]
   }
 ];

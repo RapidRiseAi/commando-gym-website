@@ -5,6 +5,7 @@ import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { mediaAssets, memberships } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 import { ProductInterestModal } from "@/components/forms/product-interest-modal";
+import { relocation } from "@/content/relocation";
 
 export const metadata = buildMetadata("Memberships & Pricing", "Daily, weekly, monthly, couples, and student gym pricing in Sabie.", "/memberships");
 
@@ -24,6 +25,25 @@ export default function MembershipsPage() {
           className="h-52 w-full object-cover md:h-64"
         />
       </div>
+
+      <aside className="relative mb-8 overflow-hidden rounded-2xl border border-white/10 bg-surface-2 p-5 shadow-card md:p-7" aria-label="Relocation access notice">
+        <div aria-hidden className="absolute -right-5 -top-10 font-display text-9xl font-bold text-white/[0.025]">27</div>
+        <div className="relative grid gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-center">
+          <div>
+            <p className="eyebrow">Before the next chapter</p>
+            <h2 className="mt-3 font-display text-2xl font-bold leading-tight">A quick heads-up</h2>
+            <p className="mt-2 font-display text-sm font-semibold text-zinc-400">Same training. New home.</p>
+          </div>
+          <div className="border-t border-white/10 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+            <p className="text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
+              Commando will be closed on <strong className="text-white">{relocation.moveDates}</strong> while we move into our new home.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
+              <strong className="text-white">24/7 gym access resumes {relocation.reopeningDate}</strong> at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
+            </p>
+          </div>
+        </div>
+      </aside>
 
       <div className="md:hidden">
         <div className="flex snap-x gap-4 overflow-x-auto pb-4">
