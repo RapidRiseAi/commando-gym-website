@@ -188,12 +188,15 @@ export default async function HomePage() {
       <Section eyebrow="Location" title="Find us in Sabie" subtitle="Train at our current home until the move, then join us for the next chapter.">
         <div className="grid gap-5 md:grid-cols-2">
           <SpotlightCard className="flex flex-col p-5 md:p-6">
-            <p className="eyebrow">Current location</p>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="eyebrow">Current location</p>
+              <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zinc-200">Open now</span>
+            </div>
             <h3 className="mt-3 font-display text-xl font-bold">Training here until {relocation.currentUntil}</h3>
             <p className="mobile-copy mt-2 text-zinc-200">{relocation.currentAddress}</p>
             <div className="mt-5 md:mt-auto md:pt-6"><Button href={businessFacts.mapLink} external>Get directions</Button></div>
           </SpotlightCard>
-          <SpotlightCard className="p-5 md:p-6">
+          <SpotlightCard className="bg-surface-2 p-5 md:p-6">
             <p className="eyebrow">Our new home</p>
             <h3 className="mt-3 font-display text-xl font-bold">Opening {relocation.reopeningShort}</h3>
             <p className="mobile-copy mt-2 text-zinc-200">{relocation.newAddress}<br />{relocation.newLandmark}</p>

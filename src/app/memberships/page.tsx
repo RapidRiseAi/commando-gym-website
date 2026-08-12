@@ -26,7 +26,7 @@ export default function MembershipsPage() {
         />
       </div>
 
-      <aside className="mb-8 border-y border-white/15 bg-gradient-to-r from-white/[0.07] to-transparent px-5 py-6 md:px-7" aria-label="Relocation access notice">
+      <aside className="relative mb-8 overflow-hidden rounded-2xl border border-white/10 bg-surface-2 px-5 py-6 shadow-card md:px-7" aria-label="Relocation access notice">
         <p className="eyebrow">A quick heads-up before the next chapter</p>
         <p className="mt-3 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
           Commando will be closed on <strong className="text-white">{relocation.moveDates}</strong> while we move into our new home.<br />
