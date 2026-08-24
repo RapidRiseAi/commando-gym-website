@@ -33,10 +33,10 @@ export function Footer() {
           </div>
           <div className="grid gap-2 text-sm text-zinc-400">
             <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Visit</p>
-            <p>{businessFacts.address}</p>
-            <p className="text-xs text-zinc-500">Moving to {relocation.newAddress} on {relocation.reopeningShort}</p>
+            <p className="text-zinc-300">Temporarily closed {relocation.moveDates}</p>
+            <p>{relocation.newAddress}</p>
+            <p className="text-xs text-zinc-500">24/7 access resumes {relocation.reopeningDate} · {relocation.newLandmark}</p>
             <p>WhatsApp: {businessFacts.whatsapp}</p>
-            <p>{businessFacts.hours}</p>
           </div>
           <nav className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm sm:grid-cols-3 md:grid-cols-2">
             {legalLinks.map((link) => (
