@@ -1,10 +1,9 @@
 /** Manually deployed campaign content. Future phase releases are controlled here. */
 export const relocation = {
-  phase: "phase-1" as const,
-  phaseLabel: "Phase 1 — We’re Moving",
+  phase: "phase-2" as const,
+  phaseLabel: "Phase 2 — The Move Is On",
   anchor: "commando-move",
   currentAddress: "53 Main Rd, Sabie, 1260",
-  currentUntil: "24 August",
   moveDates: "25 & 26 August",
   moveDatesCompact: "25–26 August",
   newAddress: "190 Main Street, Erf 153",
@@ -12,8 +11,10 @@ export const relocation = {
   reopeningDate: "Thursday, 27 August",
   reopeningShort: "27 August",
   banner: {
-    lead: "Something bigger is coming",
-    message: "Commando is moving. Our new chapter begins 27 August.",
+    lead: "The move is on",
+    message: "Closed 25 & 26 August. 24/7 access resumes at our new home on Thursday, 27 August.",
     cta: "Move details"
-  }
+  },
+  currentLocationStatus: "Closed for the move",
+  newLocationStatus: "Opens Thursday"
 };
