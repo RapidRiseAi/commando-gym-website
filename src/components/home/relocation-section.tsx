@@ -4,21 +4,21 @@ import { Reveal } from "@/components/ui/reveal";
 const timeline = [
   {
     step: "01",
-    date: "Complete",
-    title: "Our final session at the old gym",
-    body: `Training at ${relocation.currentAddress} has now ended.`
+    date: "Completed",
+    title: "We said goodbye to our old gym",
+    body: `Training at ${relocation.currentAddress} ended before the move.`
   },
   {
     step: "02",
     date: relocation.moveDatesCompact,
-    title: "The move is on",
-    body: "We’re moving, setting up and transforming our new home. The gym is temporarily closed for these two days."
+    title: "The move was completed",
+    body: "Our team moved, set up and prepared the new space over these two days."
   },
   {
     step: "03",
-    date: `Thursday, ${relocation.reopeningShort}`,
-    title: "24/7 access resumes",
-    body: `Training resumes at our new home: ${relocation.newAddress}. ${relocation.newLandmark}.`
+    date: `Open since ${relocation.reopeningShort}`,
+    title: "Our new home is open",
+    body: `Train with normal 24/7 access at ${relocation.newAddress}. ${relocation.newLandmark}.`
   }
 ];
 
@@ -41,16 +41,15 @@ export function RelocationSection() {
           <div>
             <p className="eyebrow">{relocation.phaseLabel}</p>
             <h2 className="mt-5 max-w-4xl font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-              The move<br className="hidden sm:block" /> is on.
+              We’ve moved.<br className="hidden sm:block" /> We’re open.
             </h2>
           </div>
           <div className="border-l border-white/15 pl-5 text-sm leading-6 text-zinc-300 md:pl-7 md:text-base md:leading-7">
-            <p>Commando’s transformation is under way.</p>
+            <p>Commando’s next chapter is here.</p>
             <p className="mt-3">
-              We’re temporarily closed on <strong className="text-white">25 &amp; 26 August</strong> while we complete the move. On <strong className="text-white">Thursday, 27 August</strong>, 24/7 access resumes at{" "}
-              <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
+              We’re now open with normal 24/7 access at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong> Please use our new address for every training visit.
             </p>
-            <p className="mt-4 font-display text-lg font-semibold text-white">Same Commando. New home. The next chapter starts now.</p>
+            <p className="mt-4 font-display text-lg font-semibold text-white">Same Commando. New home. A stronger chapter starts now.</p>
           </div>
         </Reveal>
 
@@ -74,10 +73,10 @@ export function RelocationSection() {
 
         <Reveal className="mt-10 border-t border-white/10 pt-7 md:mt-14 md:flex md:items-center md:justify-between md:gap-8">
           <p className="max-w-3xl font-display text-xl font-semibold leading-snug text-zinc-100 md:text-2xl">
-            We’re not simply changing location. We’re building the next chapter of Commando.
+            The doors are open. Come train, reconnect with the community and experience our new home.
           </p>
           <p className="mt-4 shrink-0 font-display text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500 md:mt-0">
-            Moving forward
+            Welcome home
           </p>
         </Reveal>
       </div>

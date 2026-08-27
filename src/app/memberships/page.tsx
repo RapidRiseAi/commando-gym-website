@@ -27,12 +27,12 @@ export default function MembershipsPage() {
       </div>
 
       <aside className="relative mb-8 overflow-hidden rounded-2xl border border-white/10 bg-surface-2 px-5 py-6 shadow-card md:px-7" aria-label="Relocation access notice">
-        <p className="eyebrow">The move is on</p>
+        <p className="eyebrow">We’ve moved — and we’re open</p>
         <p className="mt-3 text-sm leading-6 text-zinc-300 md:text-base md:leading-7">
-          Commando is temporarily closed on <strong className="text-white">{relocation.moveDates}</strong> while we complete the move into our new home.<br />
-          <strong className="text-white">24/7 gym access resumes {relocation.reopeningDate}</strong> at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
+          Memberships and normal 24/7 gym access are available now at our new home:<br />
+          <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong>
         </p>
-        <p className="mt-3 font-display font-semibold">Same training. New home. The next chapter starts Thursday.</p>
+        <p className="mt-3 font-display font-semibold">Same Commando. New home. Come start your next chapter.</p>
       </aside>
 
       <div className="md:hidden">

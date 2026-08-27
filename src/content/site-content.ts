@@ -1,4 +1,5 @@
 import type { ImageName } from "@/components/ui/responsive-image";
+import { relocation } from "@/content/relocation";
 
 export const navItems = [
   { href: "/", label: "Home" },
@@ -13,8 +14,8 @@ export const navItems = [
 
 export const businessFacts = {
   gymName: "Commando",
-  address: "53 Main Rd, Sabie, 1260",
-  mapLink: "https://www.google.com/maps/search/?api=1&query=53+Main+Rd,+Sabie,+1260",
+  address: relocation.newAddress,
+  mapLink: "https://www.google.com/maps/dir/?api=1&destination=190+Main+Street%2C+Erf+153%2C+Sabie",
   phone: "+27 60 971 0050",
   whatsapp: "+27 60 971 0050",
   email: "WhatsApp only",
@@ -235,10 +236,10 @@ export const ruleGroups = [
 
 export const faqGroups = [
   {
-    title: "Moving to our new home",
+    title: "Our new home",
     items: [
-      { q: "Is Commando moving?", a: "Yes. The move is now under way. Commando is relocating to 190 Main Street, Erf 153, directly across from Hlatini. Our new location opens on Thursday, 27 August.", keywords: "address move August location phase 2" },
-      { q: "Is Commando open during the move?", a: "No. The gym is temporarily closed on Tuesday, 25 August and Wednesday, 26 August while we complete the move. Training and 24/7 access resume at our new premises on Thursday, 27 August.", keywords: "moving closed closure August address location access" }
+      { q: "Has Commando moved?", a: "Yes. Commando is now open at 190 Main Street, Erf 153, directly across from Hlatini. Please use this address for all training visits.", keywords: "address moved new location phase 3 Hlatini open" },
+      { q: "Should I still visit 53 Main Rd?", a: "No. Training at 53 Main Rd has ended. Normal training and 24/7 gym access are available at our new premises at 190 Main Street, Erf 153.", keywords: "old previous address closed access directions" }
     ]
   },
   {
@@ -274,7 +275,7 @@ export const faqGroups = [
     title: "Scheduling and access",
     items: [
       { q: "How do I sign up?", a: "Use the Join Now form or message us on WhatsApp at +27 60 971 0050." },
-      { q: "Are you open 24/7?", a: "Commando is temporarily closed on 25 & 26 August for our relocation. 24/7 gym access resumes at our new home, 190 Main Street, Erf 153, on Thursday, 27 August." }
+      { q: "Are you open 24/7?", a: "Yes. Normal 24/7 gym access is available at our new home, 190 Main Street, Erf 153, directly across from Hlatini." }
     ]
   }
 ];
