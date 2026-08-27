@@ -185,7 +185,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Location" title="Our move is under way" subtitle="We’re closed for two days while we move. Training resumes at our new home on Thursday, 27 August.">
+      <Section eyebrow="Location" title="We’re open at our new home" subtitle="Normal training and 24/7 access are available now at 190 Main Street, Erf 153, directly across from Hlatini.">
         <div className="grid gap-5 md:grid-cols-2">
           <SpotlightCard className="flex flex-col p-5 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -194,15 +194,16 @@ export default async function HomePage() {
             </div>
             <h3 className="mt-3 font-display text-xl font-bold">Training here has ended</h3>
             <p className="mobile-copy mt-2 text-zinc-200">{relocation.currentAddress}</p>
-            <p className="mobile-copy mt-3">Please don’t visit this address for training. We’re now relocating to our new premises.</p>
+            <p className="mobile-copy mt-3">Please don’t visit this address for training. All gym access has moved to our new premises.</p>
           </SpotlightCard>
           <SpotlightCard className="bg-surface-2 p-5 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="eyebrow">Our new home</p>
               <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zinc-200">{relocation.newLocationStatus}</span>
             </div>
-            <h3 className="mt-3 font-display text-xl font-bold">24/7 access resumes {relocation.reopeningDate}</h3>
+            <h3 className="mt-3 font-display text-xl font-bold">Open now with 24/7 access</h3>
             <p className="mobile-copy mt-2 text-zinc-200">{relocation.newAddress}<br />{relocation.newLandmark}</p>
+            <Button href={businessFacts.mapLink} external className="mt-5">Get directions</Button>
           </SpotlightCard>
         </div>
       </Section>
