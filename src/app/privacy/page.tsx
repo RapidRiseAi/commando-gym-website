@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h3 className="font-display text-lg font-bold text-white md:text-xl">1. Who we are (Responsible Party)</h3>
           <p>
-            Commando (&ldquo;Commando&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates a 24/7 gym and an onsite
+            Commando (&ldquo;Commando&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates a gym open from 5 AM to 9 PM and an onsite
             wellness studio at {businessFacts.address}. For the purposes of POPIA, Commando is the responsible party for
             the personal information processed through this website. The owner/manager of Commando acts as the
             Information Officer. You can reach us about any privacy matter on WhatsApp at {businessFacts.whatsapp}.

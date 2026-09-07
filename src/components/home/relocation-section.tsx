@@ -18,7 +18,7 @@ const timeline = [
     step: "03",
     date: `Open since ${relocation.reopeningShort}`,
     title: "Our new home is open",
-    body: `Train with normal 24/7 access at ${relocation.newAddress}. ${relocation.newLandmark}.`
+    body: `Train from 5 AM to 9 PM at ${relocation.newAddress}. ${relocation.newLandmark}.`
   }
 ];
 
@@ -47,7 +47,7 @@ export function RelocationSection() {
           <div className="border-l border-white/15 pl-5 text-sm leading-6 text-zinc-300 md:pl-7 md:text-base md:leading-7">
             <p>Commando’s next chapter is here.</p>
             <p className="mt-3">
-              We’re now open with normal 24/7 access at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong> Please use our new address for every training visit.
+              We’re now open daily from 5 AM to 9 PM at <strong className="text-white">{relocation.newAddress} — directly across from Hlatini.</strong> Please use our new address for every training visit.
             </p>
             <p className="mt-4 font-display text-lg font-semibold text-white">Same Commando. New home. A stronger chapter starts now.</p>
           </div>

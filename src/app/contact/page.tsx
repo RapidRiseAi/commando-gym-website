@@ -29,7 +29,7 @@ export default function ContactPage() {
               <p className="eyebrow">New location</p>
               <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zinc-200">{relocation.newLocationStatus}</span>
             </div>
-            <h2 className="mt-2 font-display text-xl font-bold text-white">Open now with 24/7 access</h2>
+            <h2 className="mt-2 font-display text-xl font-bold text-white">Open daily from 5 AM to 9 PM</h2>
             <p className="mt-1">{relocation.newAddress}<br />{relocation.newLandmark}</p>
             <p className="mt-3 text-sm font-semibold text-white">The move is complete. Come experience the next chapter of Commando.</p>
             <Button href={businessFacts.mapLink} external className="mt-4">Get directions</Button>
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <p><strong className="font-display text-zinc-400">Phone:</strong> {businessFacts.phone}</p>
           <p><strong className="font-display text-zinc-400">WhatsApp:</strong> {businessFacts.whatsapp}</p>
           <p><strong className="font-display text-zinc-400">Email:</strong> {businessFacts.email}</p>
-          <p><strong className="font-display text-zinc-400">Gym access:</strong> Open 24/7 at our new premises.</p>
+          <p><strong className="font-display text-zinc-400">Gym access:</strong> Open from 5 AM to 9 PM at our new premises.</p>
           <p><strong className="font-display text-zinc-400">Wellness Studio:</strong> 08:00 to 16:00, appointment only.</p>
         </SpotlightCard>
         <SpotlightCard className="p-5 md:p-6">

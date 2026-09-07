@@ -78,13 +78,6 @@ export const GOOGLE_REVIEWS_FALLBACK: FallbackGoogleReview[] = [
     text: "Best place to gym and best place to get a massage. Also best customer service. Best owner of the Gym Chantelle always a friendly greeting from her."
   },
   {
-    authorName: "Andrea Conrad",
-    reviewerMeta: "10 reviews",
-    rating: 5,
-    relativePublishTimeDescription: "2 years ago",
-    text: "Such a great little gym with all you need for a nice workout. Shaun welcomed us super friendly and showed us around so we could feel \"at home\" and come when we want to during our stay in the area. Open 24/7 , very clean and fantastic views!"
-  },
-  {
     authorName: "Kayleigh Snyman",
     reviewerMeta: "Local Guide · 12 reviews · 3 photos",
     rating: 5,

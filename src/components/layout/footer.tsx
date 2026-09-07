@@ -28,12 +28,12 @@ export function Footer() {
               />
             </Link>
             <p className="mt-3 text-sm leading-6 text-zinc-400">
-              24/7 gym and onsite wellness studio in Sabie. Train with consistency, recover with purpose.
+              Gym open from 5 AM to 9 PM with an onsite wellness studio in Sabie. Train with consistency, recover with purpose.
             </p>
           </div>
           <div className="grid gap-2 text-sm text-zinc-400">
             <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Visit</p>
-            <p className="text-zinc-300">Open now · 24/7 gym access</p>
+            <p className="text-zinc-300">Open daily · 5 AM to 9 PM</p>
             <p>{relocation.newAddress}</p>
             <p className="text-xs text-zinc-500">{relocation.newLandmark}</p>
             <Link href={businessFacts.mapLink} target="_blank" rel="noreferrer" className="text-zinc-300 underline underline-offset-4 hover:text-white">Get directions</Link>
