@@ -12,9 +12,9 @@ export const relocation = {
   reopeningShort: "27 August",
   banner: {
     lead: "We’ve moved — and we’re open",
-    message: "Train 24/7 at 190 Main Street, Erf 153, directly across from Hlatini.",
+    message: "Train from 5 AM to 9 PM at 190 Main Street, Erf 153, directly across from Hlatini.",
     cta: "Visit our new home"
   },
   currentLocationStatus: "No longer in use",
-  newLocationStatus: "Open now · 24/7"
+  newLocationStatus: "Open daily · 5 AM to 9 PM"
 };

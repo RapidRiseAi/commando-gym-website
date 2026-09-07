@@ -19,18 +19,18 @@ export const businessFacts = {
   phone: "+27 60 971 0050",
   whatsapp: "+27 60 971 0050",
   email: "WhatsApp only",
-  hours: "Gym access: 24/7",
+  hours: "Gym access: 5 AM to 9 PM",
   socialProof: [
-    { label: "Open access", value: "Gym open 24/7" },
+    { label: "Daily hours", value: "Gym open 5 AM to 9 PM" },
     { label: "Appointment only", value: "Fitness & wellness studio" }
   ]
 };
 
 export const homeContent = {
   hero: {
-    headline: "Train Anytime. Recover Properly. Stay Consistent.",
+    headline: "Train Early. Train Late. Stay Consistent.",
     subheadline:
-      "Commando is Sabie’s 24/7 training space with an Onsite Wellness Studio. Whether you are just starting or already active, we give you the structure and environment to keep moving forward.",
+      "Commando is Sabie’s training space, open from 5 AM to 9 PM, with an Onsite Wellness Studio. Whether you are just starting or already active, we give you the structure and environment to keep moving forward.",
     primaryCta: { label: "Join Now", href: "/memberships" },
     secondaryCta: { label: "View Memberships", href: "/memberships" }
   },
@@ -61,7 +61,7 @@ export const mediaAssets = {
     {
       name: "cycling-bike" as ImageName,
       alt: "Cycling and cardio zone at Commando gym",
-      title: "24/7 training access",
+      title: "5 AM to 9 PM training access",
       body: "Train when your schedule allows, with a full floor of cardio and strength options."
     },
     {
@@ -97,7 +97,7 @@ export const mediaAssets = {
 
 export const testimonials = [
   {
-    quote: "Best decision I made this year. The 24/7 access changed my routine completely.",
+    quote: "Best decision I made this year. The flexible hours changed my routine completely.",
     name: "Local Member",
     context: "Monthly Membership"
   },
@@ -118,35 +118,35 @@ export const memberships = [
     name: "Daily Pass",
     price: "R50",
     description: "Ideal for visitors and flexible drop-ins.",
-    includes: ["24/7 gym access for one day", "No contract", "Pay-as-you-go"],
+    includes: ["Gym access from 5 AM to 9 PM for one day", "No contract", "Pay-as-you-go"],
     spa: "Wellness booking available separately"
   },
   {
     name: "Weekly Pass",
     price: "R150",
     description: "Great for short stays and trial periods.",
-    includes: ["24/7 gym access for seven days", "No contract", "Great for travel/work trips"],
+    includes: ["Gym access from 5 AM to 9 PM for seven days", "No contract", "Great for travel/work trips"],
     spa: "Wellness booking available separately"
   },
   {
     name: "Monthly Membership",
     price: "R350",
     description: "Best for regular training and long-term consistency.",
-    includes: ["24/7 gym access", "No sign-up fee", "No fixed contract"],
+    includes: ["Gym access from 5 AM to 9 PM", "No sign-up fee", "No fixed contract"],
     spa: "20% off health treatments in Wellness Studio"
   },
   {
     name: "Couples Membership",
     price: "R550",
     description: "Shared consistency for two people.",
-    includes: ["24/7 gym access for two", "No sign-up fee", "No fixed contract"],
+    includes: ["Gym access from 5 AM to 9 PM for two", "No sign-up fee", "No fixed contract"],
     spa: "20% off health treatments in Wellness Studio"
   },
   {
     name: "Student Membership",
     price: "R250",
     description: "Affordable option for students building healthy habits.",
-    includes: ["24/7 gym access", "No sign-up fee", "No fixed contract"],
+    includes: ["Gym access from 5 AM to 9 PM", "No sign-up fee", "No fixed contract"],
     spa: "20% off health treatments in Wellness Studio"
   }
 ];
@@ -239,7 +239,7 @@ export const faqGroups = [
     title: "Our new home",
     items: [
       { q: "Has Commando moved?", a: "Yes. Commando is now open at 190 Main Street, Erf 153, directly across from Hlatini. Please use this address for all training visits.", keywords: "address moved new location phase 3 Hlatini open" },
-      { q: "Should I still visit 53 Main Rd?", a: "No. Training at 53 Main Rd has ended. Normal training and 24/7 gym access are available at our new premises at 190 Main Street, Erf 153.", keywords: "old previous address closed access directions" }
+      { q: "Should I still visit 53 Main Rd?", a: "No. Training at 53 Main Rd has ended. Normal gym access from 5 AM to 9 PM is available at our new premises at 190 Main Street, Erf 153.", keywords: "old previous address closed access directions" }
     ]
   },
   {
@@ -275,7 +275,7 @@ export const faqGroups = [
     title: "Scheduling and access",
     items: [
       { q: "How do I sign up?", a: "Use the Join Now form or message us on WhatsApp at +27 60 971 0050." },
-      { q: "Are you open 24/7?", a: "Yes. Normal 24/7 gym access is available at our new home, 190 Main Street, Erf 153, directly across from Hlatini." }
+      { q: "What are the gym opening hours?", a: "The gym is open from 5 AM to 9 PM at our new home, 190 Main Street, Erf 153, directly across from Hlatini." }
     ]
   }
 ];

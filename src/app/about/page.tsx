@@ -4,11 +4,11 @@ import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { mediaAssets } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata("About", "Learn about Commando’s 24/7 training culture and onsite wellness support in Sabie.", "/about");
+export const metadata = buildMetadata("About", "Learn about Commando’s training culture, 5 AM to 9 PM hours, and onsite wellness support in Sabie.", "/about");
 
 export default function AboutPage() {
   return (
-    <Section heading="h1" eyebrow="Our story" title="About Commando" subtitle="A 24/7 gym and wellness space built for Sabie.">
+    <Section heading="h1" eyebrow="Our story" title="About Commando" subtitle="A gym open from 5 AM to 9 PM and wellness space built for Sabie.">
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         <SpotlightCard as="figure" className="order-1 overflow-hidden lg:order-2">
           <ResponsiveImage
@@ -18,7 +18,7 @@ export default function AboutPage() {
             className="h-72 w-full object-cover md:h-80 lg:h-[26rem]"
           />
           <figcaption className="border-t border-white/10 px-4 py-3 text-sm text-zinc-300">
-            Commando Gym building in Sabie. Your 24/7 training base and wellness support space.
+            Commando Gym building in Sabie. Your 5 AM to 9 PM training base and wellness support space.
           </figcaption>
         </SpotlightCard>
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
             after a long break, our mission is to give you a space where progress feels possible every single day.
           </p>
           <p>
-            We are open 24/7 with secure access so your training can match your life, not the other way around. Early mornings, late nights,
+            We are open from 5 AM to 9 PM so your training can match your life, not the other way around. Early mornings, evenings,
             or in-between shifts, your routine has a home here.
           </p>
           <p>

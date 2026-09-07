@@ -13,8 +13,8 @@ import { relocation } from "@/content/relocation";
 import { businessFacts, faqGroups, homeContent, mediaAssets } from "@/content/site-content";
 
 export const metadata = buildMetadata(
-  "24/7 Gym + Fitness & Wellness Studio in Sabie",
-  "Commando offers 24/7 gym access plus appointment-based fitness and wellness services in Sabie.",
+  "Gym Open 5 AM to 9 PM + Fitness & Wellness Studio in Sabie",
+  "Commando offers gym access from 5 AM to 9 PM plus appointment-based fitness and wellness services in Sabie.",
   "/"
 );
 
@@ -56,7 +56,7 @@ export default async function HomePage() {
           {/* Desktop text column */}
           <div className="hidden md:order-1 md:block">
             <Reveal>
-              <p className="eyebrow mb-5">24/7 Gym &amp; Wellness · Sabie</p>
+              <p className="eyebrow mb-5">Open 5 AM to 9 PM · Gym &amp; Wellness · Sabie</p>
               <h1 className="font-display text-6xl font-bold leading-[0.98] tracking-tight xl:text-7xl">
                 {homeContent.hero.headline}
               </h1>
@@ -92,7 +92,7 @@ export default async function HomePage() {
                 {/* Mobile-only overlaid editorial headline */}
                 <div className="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-black/85 via-black/15 to-black/35 p-5 md:hidden">
                   <span className="inline-flex w-fit rounded-full border border-white/25 bg-black/50 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-zinc-100 backdrop-blur">
-                    24/7 Gym &amp; Wellness · Sabie
+                    Open 5 AM to 9 PM · Gym &amp; Wellness · Sabie
                   </span>
                   <div>
                     <h1 className="font-display text-4xl font-bold leading-[1.02] tracking-tight">
@@ -185,7 +185,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Location" title="We’re open at our new home" subtitle="Normal training and 24/7 access are available now at 190 Main Street, Erf 153, directly across from Hlatini.">
+      <Section eyebrow="Location" title="We’re open at our new home" subtitle="Normal training from 5 AM to 9 PM is available now at 190 Main Street, Erf 153, directly across from Hlatini.">
         <div className="grid gap-5 md:grid-cols-2">
           <SpotlightCard className="flex flex-col p-5 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -201,7 +201,7 @@ export default async function HomePage() {
               <p className="eyebrow">Our new home</p>
               <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zinc-200">{relocation.newLocationStatus}</span>
             </div>
-            <h3 className="mt-3 font-display text-xl font-bold">Open now with 24/7 access</h3>
+            <h3 className="mt-3 font-display text-xl font-bold">Open daily from 5 AM to 9 PM</h3>
             <p className="mobile-copy mt-2 text-zinc-200">{relocation.newAddress}<br />{relocation.newLandmark}</p>
             <Button href={businessFacts.mapLink} external className="mt-5">Get directions</Button>
           </SpotlightCard>
