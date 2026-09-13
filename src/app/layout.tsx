@@ -24,7 +24,10 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: { default: "Commando", template: "%s | Commando" },
   description: "Gym open from 5 AM to 9 PM with an onsite wellness studio in Sabie. Train with consistency and recover with purpose.",
-  metadataBase: new URL(siteConfig.baseUrl)
+  metadataBase: new URL(siteConfig.baseUrl),
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml", sizes: "any" }]
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
